@@ -2,10 +2,15 @@ import Title from "./components/home";
 import TBlock from "./components/t-blocks";
 import Video from "./components/videos";
 import Layout from "./layout";
+import mobile1 from '../public/2/mobile.svg';
+import mobile2 from '../public/3/mobile.svg';
+import mobile3 from '../public/4/mobile.svg';
+import mobile6 from '../public/6/mobile.svg';
+
 
 const TBlocks = [
   {
-    mobile: 'public/2/mobile.svg',
+    mobile: mobile1,
     logo: 'public/2/logo.svg',
     title: 'T-Staking',
     button: 'Buy TTTU',
@@ -15,7 +20,7 @@ const TBlocks = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   },
   {
-    mobile: 'public/3/mobile.svg',
+    mobile: mobile2,
     logo: 'public/3/logo.svg',
     title: 'T-Autotrade',
     button: 'Profitability calbculator',
@@ -25,7 +30,7 @@ const TBlocks = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   },
   {
-    mobile: 'public/4/mobile.svg',
+    mobile: mobile3,
     logo: 'public/4/logo.svg',
     title: 'T-Wallet',
     button: 'Buy TTTU',
@@ -35,7 +40,7 @@ const TBlocks = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   },
   {
-    mobile: 'public/4/mobile.svg',
+    mobile: mobile3,
     logo: 'public/5/logo.svg',
     title: "T-Gamble",
     button: 'Buy TTTU',
@@ -45,7 +50,7 @@ const TBlocks = [
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   },
   {
-    mobile: 'public/6/mobile.svg',
+    mobile: mobile6,
     title: "Our Next Products",
     button: 'RoadMap',
     arrow: true,
