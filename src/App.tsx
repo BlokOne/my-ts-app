@@ -8,10 +8,17 @@ import mobile3 from '../public/4/mobile.svg';
 import mobile6 from '../public/6/mobile.svg';
 
 
+import logo1 from '../public/2/logo.svg';
+import logo2 from '../public/3/logo.svg';
+import logo3 from '../public/4/logo.svg';
+import logo5 from '../public/5/logo.svg';
+
+
+
 const TBlocks = [
   {
     mobile: mobile1,
-    logo: 'public/2/logo.svg',
+    logo: logo1,
     title: 'T-Staking',
     button: 'Buy TTTU',
     arrow: true,
@@ -21,7 +28,7 @@ const TBlocks = [
   },
   {
     mobile: mobile2,
-    logo: 'public/3/logo.svg',
+    logo: logo2,
     title: 'T-Autotrade',
     button: 'Profitability calbculator',
     arrow: false,
@@ -31,7 +38,7 @@ const TBlocks = [
   },
   {
     mobile: mobile3,
-    logo: 'public/4/logo.svg',
+    logo: logo3,
     title: 'T-Wallet',
     button: 'Buy TTTU',
     arrow: true,
@@ -41,7 +48,7 @@ const TBlocks = [
   },
   {
     mobile: mobile3,
-    logo: 'public/5/logo.svg',
+    logo: logo5,
     title: "T-Gamble",
     button: 'Buy TTTU',
     arrow: true,
