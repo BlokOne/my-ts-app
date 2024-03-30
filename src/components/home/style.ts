@@ -5,8 +5,17 @@ export const titleStyle: CSSProperties = {
   fontWeight: 700,
   fontSize: '150px',
   textAlign: 'center',
-  height: "182px",
+  maxHeight: "182px",
   color: 'white',
   margin: 0,
+}
+
+export const wrapper: CSSProperties = {
+  height: 'calc(100vh - 318px)',
+  maxHeight: '1146px',
+  display: "flex",
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center'
 }
 
