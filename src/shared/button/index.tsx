@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { buttonStyle } from "./style"
+import arrowSvg from '../../../public/arrow.svg'
 
 type ButtonT = {
   width: string,
@@ -13,7 +14,7 @@ function Button({ width, children, arrow, disabled }: ButtonT) {
     <button style={buttonStyle(width, arrow, disabled)}>
       {children}
       {
-        arrow && <img src="public/arrow.svg" />
+        arrow && <img src={arrowSvg} />
       }
     </button>
   )
