@@ -11,7 +11,7 @@ export const titleStyle: CSSProperties = {
 }
 
 export const wrapper: CSSProperties = {
-  height: 'calc(100vh - 318px)',
+  height: 'calc(100vh - 275px)',
   maxHeight: '1146px',
   display: "flex",
   flexDirection: 'column',
