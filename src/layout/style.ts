@@ -18,5 +18,6 @@ export const mainStyle = (isMobile: any): CSSProperties => ({
   margin: '0 auto',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center'
+  alignItems: 'center',
+  overflowY: 'hidden'
 })
