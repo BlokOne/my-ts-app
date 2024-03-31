@@ -21,7 +21,7 @@ export const itemStyle = (isMobile: any): CSSProperties => ({
   maxWidth: isMobile ? '206px' : "266px",
   maxHeight: '357px',
   color: '#fff',
-  padding: isMobile ? '87px 28px 48px' : '87px 38px 48px',
+  padding: isMobile ? '87px 25px 48px' : '87px 38px 48px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
