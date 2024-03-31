@@ -7,7 +7,7 @@ import mobile2 from '../public/3/mobile.svg';
 import mobile3 from '../public/4/mobile.svg';
 import mobile6 from '../public/6/mobile.svg';
 import mobile12 from '../public/2/mobile2.svg';
-import mobile22 from '../public/3/mobile.svg';
+import mobile22 from '../public/3/mobile2.svg';
 import mobile32 from '../public/4/mobile2.svg';
 import mobile62 from '../public/6/mobile2.svg';
 import logo1 from '../public/2/logo.svg';
