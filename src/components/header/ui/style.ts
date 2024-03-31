@@ -12,3 +12,13 @@ export const linkStyle = {
   color: 'fff',
   textDecoration: 'none'
 }
+
+export const linkStyleMobile = {
+  fontSize: '30px',
+  fontWeight: 400,
+  fontFamily: 'Inter',
+  lineHeight: "19.36px",
+  color: 'fff',
+  textDecoration: 'none',
+  marginBottom: "45px"
+}

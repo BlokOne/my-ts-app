@@ -5,5 +5,6 @@ export const HeaderStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   marginBottom: '6%',
-  paddingTop: '49px'
+  paddingTop: '49px',
+
 }

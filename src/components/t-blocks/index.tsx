@@ -1,8 +1,11 @@
+import { useMediaQuery } from "../../media/useMedia"
 import Button from "../../shared/button"
 import { titleStyle, wrapper, textStyle, logoStyle, wrapperLogoStyle, textWrapper, buttonsWrapper } from "./style"
 
 type TBlockT = {
   mobile: string,
+  mobile2: string,
+
   logo?: string,
   title: string,
   button: string
@@ -10,36 +13,67 @@ type TBlockT = {
   text: string
   href1: string
   href2: string
+  id?: string
 }
 
-function TBlock({ mobile, logo, title, button, arrow, text }: TBlockT) {
+function TBlock({ mobile, logo, title, button, arrow, text, id, mobile2 }: TBlockT) {
+  const isMobile = useMediaQuery()
   return (
-    <div style={wrapper}>
-      <img src={mobile} alt="" />
-      <div>
-        <div style={wrapperLogoStyle}>
-          {logo && <div style={logoStyle}>
-            <img src={logo} />
-          </div>}
-          <h3 style={titleStyle}>
-            {title}
-          </h3>
-        </div>
-        <div style={textWrapper}>
-          <p style={textStyle}>
-            {text}
-          </p>
-        </div>
-        <div style={buttonsWrapper}>
-          <Button width="306px" arrow={arrow}>
-            {button}
-          </Button>
-          {logo && <Button disabled={true} width="306px" >
-            Learn more
-          </Button>}
-        </div>
-      </div>
-    </div >
+    <>
+      {
+        isMobile ?
+          <div id={id} style={wrapper(isMobile, mobile2)}>
+            <div style={wrapperLogoStyle}>
+              {logo && <div style={logoStyle}>
+                <img src={logo} />
+              </div>}
+              <h3 style={titleStyle}>
+                {title}
+              </h3>
+            </div>
+            <div style={textWrapper}>
+              <p style={textStyle}>
+                {text}
+              </p>
+            </div>
+            <div style={buttonsWrapper}>
+              <Button width="306px" arrow={arrow}>
+                {button}
+              </Button>
+              {logo && <Button disabled={true} width="306px" >
+                Learn more
+              </Button>}
+            </div>
+          </div >
+          :
+          <div id={id} style={wrapper(isMobile, mobile)}>
+            <img src={mobile} alt="" />
+            <div>
+              <div style={wrapperLogoStyle}>
+                {logo && <div style={logoStyle}>
+                  <img src={logo} />
+                </div>}
+                <h3 style={titleStyle}>
+                  {title}
+                </h3>
+              </div>
+              <div style={textWrapper}>
+                <p style={textStyle}>
+                  {text}
+                </p>
+              </div>
+              <div style={buttonsWrapper}>
+                <Button width="306px" arrow={arrow}>
+                  {button}
+                </Button>
+                {logo && <Button disabled={true} width="306px" >
+                  Learn more
+                </Button>}
+              </div>
+            </div>
+          </div >
+      }
+    </>
   )
 }
 

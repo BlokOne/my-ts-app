@@ -1,4 +1,4 @@
-export const buttonStyle = (width: string, arrow?: boolean, disabled?: boolean) => ({
+export const buttonStyle = (width: string, arrow?: boolean, disabled?: boolean, footer?: boolean) => ({
   width: width,
   padding: '23px',
   backgroundColor: disabled ? '#1C191D' : '#0DF69E',
@@ -7,7 +7,7 @@ export const buttonStyle = (width: string, arrow?: boolean, disabled?: boolean) 
   fontWeight: disabled ? 400 : 700,
   fontSize: '20px',
   lineHeight: '23px',
-  color: disabled ? '#696969' : '#10100E',
+  color: footer ? '#fff' : disabled ? '#696969' : '#10100E',
   display: arrow ? 'flex' : 'block',
   justifyContent: "space-between",
   alignItems: "center",

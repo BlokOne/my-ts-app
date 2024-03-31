@@ -1,10 +1,23 @@
 import { CSSProperties } from "react"
 
-export const wrapper: CSSProperties = {
-  padding: '132px 0px',
-  display: 'flex',
-  gap: '150px',
-  alignItems: 'center'
+export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
+  return isMobile ? {
+    padding: '434px 0px 104px 0px',
+    display: 'flex',
+    gap: '20px',
+    background: `url(${mobile})`,
+    flexDirection: 'column',
+    backgroundSize: '100% auto',
+    backgroundPosition: 'top', // Изображение будет прижато к верху
+    backgroundRepeat: 'no-repeat' // Если не хотите, чтобы фон повторялся
+  } :
+    {
+      padding: '132px 0px',
+      display: 'flex',
+      gap: '150px',
+      alignItems: 'center'
+    }
+
 }
 
 export const titleStyle: CSSProperties = {
@@ -18,7 +31,7 @@ export const titleStyle: CSSProperties = {
 
 export const textStyle: CSSProperties = {
   fontFamily: 'Inter',
-  fontWeight: 400,
+  fontWeight: 300,
   fontSize: '16px',
   textAlign: "center",
   color: 'white'

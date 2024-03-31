@@ -7,11 +7,12 @@ type ButtonT = {
   arrow?: boolean
   children: ReactNode | string
   disabled?: boolean
+  footer?: boolean
 }
 
-function Button({ width, children, arrow, disabled }: ButtonT) {
+function Button({ width, children, arrow, disabled,footer }: ButtonT) {
   return (
-    <button style={buttonStyle(width, arrow, disabled)}>
+    <button style={buttonStyle(width, arrow, disabled,footer)}>
       {children}
       {
         arrow && <img src={arrowSvg} />

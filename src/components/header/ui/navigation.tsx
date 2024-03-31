@@ -4,15 +4,15 @@ function Navigation() {
   const links = [
     {
       text: 'Products',
-      href: '#target-section'
+      href: '#products'
     },
     {
       text: 'Docs',
-      href: '#target-section'
+      href: '#docs'
     },
     {
       text: 'T-Staking',
-      href: '#target-section'
+      href: '#t-Staking'
     }
   ]
 

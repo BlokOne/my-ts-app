@@ -6,7 +6,7 @@ function Video() {
 
 
   return (
-    <div style={container}>
+    <div id={'docs'} style={container}>
       <div style={background}></div>
       <div style={videoStyle} >
         <iframe
