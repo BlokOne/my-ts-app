@@ -17,21 +17,18 @@ export const wrapperStyle: CSSProperties = {
   justifyContent: 'center'
 }
 
-export const itemStyle: CSSProperties = {
-  maxWidth: "266px",
+export const itemStyle = (isMobile: any): CSSProperties => ({
+  maxWidth: isMobile ? '206px' : "266px",
   maxHeight: '357px',
   color: '#fff',
-  paddingTop: "87px",
-  paddingLeft: "38px",
-  paddingRight: "38px",
-  paddingBottom: '48px',
+  padding: isMobile ? '87px 28px 48px' : '87px 38px 48px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   border: "2px solid #1C191D",
   borderRadius: '25px',
   marginBottom: '15px'
-}
+})
 
 export const itemTextStyle: CSSProperties = {
   fontWeight: 'bold',

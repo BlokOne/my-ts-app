@@ -12,18 +12,21 @@ import logo from '../../../public/logo.svg'
 
 
 import Button from "../../shared/button"
+import { useMediaQuery } from "../../media/useMedia"
 
 function Footer() {
+  const isMobile = useMediaQuery()
+
   return (
     <footer style={footerStyle}>
       <div style={wrapperStyle}>
         {
-          items.map(item => <div key={item.title} style={itemStyle}>
+          items.map(item => <div key={item.title} style={itemStyle(isMobile)}>
             <img src={item.icon} />
             <p style={itemTextStyle}>
               {item.title}
             </p>
-            <Button footer width="190px" disabled={true}>
+            <Button footer width={isMobile ? '147px' : '190px'} disabled={true}>
               {item.button}
             </Button>
           </div>)
