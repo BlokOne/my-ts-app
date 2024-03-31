@@ -140,3 +140,7 @@ body {
    background: url("путь/к/вашему/изображению.jpg") no-repeat center/cover;
    z-index: -1; /* Помещает псевдоэлемент под содержимое родителя */
 }
+.ReactModal__Overlay {
+   background-color: rgb(0 0 0 / 75%) !important;
+   z-index: 1111000;
+}

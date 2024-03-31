@@ -3,7 +3,7 @@ import backgroundImage from '../../../public/mac.svg'
 
 export const container = (isMobile: any): CSSProperties => ({
   width: isMobile ? '100%' : '1140px',
-  maxWidth: '440px',
+  maxWidth: isMobile ? '440px' : '1140px',
   paddingBottom: isMobile ? '85px' : '304px',
   height: isMobile ? 'calc(315px + 23px)' : '643px',
   position: 'relative',
