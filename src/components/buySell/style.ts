@@ -37,7 +37,7 @@ export const textStyle = (isMobile: any): CSSProperties => ({
   marginLeft: isMobile ? '12px' : '0'
 })
 
-export const wrapperIconsStyle = (isMobile: any): CSSProperties => ({
+export const wrapperIconsStyle = (): CSSProperties => ({
   display: 'flex',
   marginBottom: '80px',
   justifyContent: 'space-between',
