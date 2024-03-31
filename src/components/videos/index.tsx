@@ -14,7 +14,7 @@ function Video() {
             <div style={videoStyle(isMobile)} >
               <iframe
                 src={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
-                style={iframeStyle(isMobile)}
+                style={iframeStyle()}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -32,7 +32,7 @@ function Video() {
             <div style={videoStyle(isMobile)} >
               <iframe
                 src={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
-                style={iframeStyle(isMobile)}
+                style={iframeStyle()}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

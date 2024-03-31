@@ -25,7 +25,7 @@ export const videoStyle = (isMobile: any): CSSProperties => ({
   height: "calc(100% - 132px)"
 })
 
-export const iframeStyle = (isMobile: any): CSSProperties => ({
+export const iframeStyle = (): CSSProperties => ({
   position: 'relative',
   zIndex: 10,
   width: '100%',

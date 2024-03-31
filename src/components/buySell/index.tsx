@@ -22,7 +22,7 @@ export default function BuySell() {
             <p style={textStyle(isMobile)}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
             </p>
-            <div style={wrapperIconsStyle(isMobile)}>
+            <div style={wrapperIconsStyle()}>
               <a href="/">
                 <img src={icon2} alt="" />
               </a>
@@ -30,7 +30,7 @@ export default function BuySell() {
                 <img src={icon1} alt="" />
               </a>
             </div>
-            <div style={wrapperButtonStyle(isMobile)}>
+            <div style={wrapperButtonStyle()}>
               <p style={{
                 fontWeight: 'bold',
                 fontSize: '30px'
@@ -41,15 +41,15 @@ export default function BuySell() {
             </div>
           </div>
           :
-          <div style={wrapper(isMobile)}>
-            <div style={wrapperInfo(isMobile)}>
+          <div style={wrapper()}>
+            <div style={wrapperInfo()}>
               <div>
                 <p style={titleStyle(isMobile)}>Buy/Sell TTTU</p>
                 <p style={subTitleStyle(isMobile)}>on <span><img src={icon} alt="" /></span></p>
                 <p style={textStyle(isMobile)}>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                 </p>
-                <div style={wrapperIconsStyle(isMobile)}>
+                <div style={wrapperIconsStyle()}>
                   <a href="/">
                     <img src={icon2} alt="" />
                   </a>
@@ -57,7 +57,7 @@ export default function BuySell() {
                     <img src={icon1} alt="" />
                   </a>
                 </div>
-                <div style={wrapperButtonStyle(isMobile)}>
+                <div style={wrapperButtonStyle()}>
                   <p style={{
                     fontWeight: 'bold',
                     fontSize: '30px'

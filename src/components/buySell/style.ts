@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import backgroundImage from '../../../public/7/Rectangle314.svg'
 
-export const wrapper = (isMobile: any): CSSProperties => ({
+export const wrapper = (): CSSProperties => ({
   color: 'white',
   display: 'flex',
   justifyContent: 'space-between',
@@ -9,7 +9,7 @@ export const wrapper = (isMobile: any): CSSProperties => ({
   paddingBottom: '197px'
 })
 
-export const wrapperInfo = (isMobile: any): CSSProperties => ({
+export const wrapperInfo = (): CSSProperties => ({
   display: 'flex',
   flexDirection: 'column'
 })
@@ -37,12 +37,12 @@ export const textStyle = (isMobile: any): CSSProperties => ({
   marginLeft: isMobile ? '12px' : '0'
 })
 
-export const wrapperIconsStyle = (isMobile: any): CSSProperties => ({
+export const wrapperIconsStyle = (): CSSProperties => ({
   display: 'flex',
   marginBottom: '80px'
 })
 
-export const wrapperButtonStyle = (isMobile: any): CSSProperties => ({
+export const wrapperButtonStyle = (): CSSProperties => ({
   backgroundImage: `url(${backgroundImage})`,
   paddingTop: "49px",
   width: '423px',
