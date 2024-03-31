@@ -11,7 +11,7 @@ function TStaking() {
       <p style={{ fontWeight: 'bold', fontSize: '60px', color: 'white', marginBottom: '51px' }}>
         T-Staking
       </p>
-      <img style={{ marginBottom: '74px' }} src={isMobile ? imgReferral2 : imgReferral} />
+      <img style={{ marginBottom: '74px', width: isMobile ? '100%' : '100%' }} src={isMobile ? imgReferral2 : imgReferral} />
       <Button width='267px' arrow={true}>
         Stake TTTU +
       </Button>
