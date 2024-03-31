@@ -128,3 +128,15 @@ body {
 .bm-overlay {
    background: rgba(0, 0, 0, 0.3);
 }
+
+
+.parent::before {
+  content: "";
+  position: absolute;
+  top: -50px; /* Сдвигает псевдоэлемент вверх (или другое значение) */
+  left: -50px; /* Сдвигает влево (или другое значение) */
+  right: -50px; /* Увеличивает ширину */
+  bottom: -50px; /* Увеличивает высоту */
+  background: url('путь/к/вашему/изображению.jpg') no-repeat center/cover;
+  z-index: -1; /* Помещает псевдоэлемент под содержимое родителя */
+}

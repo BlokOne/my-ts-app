@@ -1,12 +1,12 @@
 import { CSSProperties } from 'react'
 import backgroundImage from '../../../public/mac.svg'
 
-export const container: CSSProperties = {
-  width: '1140px',
-  paddingBottom: '304px',
-  height: '643px',
+export const container = (isMobile: any): CSSProperties => ({
+  width: isMobile ? '440px' : '1140px',
+  paddingBottom: isMobile ? '85px' : '304px',
+  height: isMobile ? 'calc(315px + 23px)' : '643px',
   position: 'relative',
-}
+})
 
 export const background: CSSProperties = {
   position: 'absolute',
@@ -18,16 +18,16 @@ export const background: CSSProperties = {
   backgroundRepeat: 'no-repeat',
 }
 
-export const videoStyle: CSSProperties = {
-  padding: '34px 143px 78px 143px',
+export const videoStyle = (isMobile: any): CSSProperties => ({
+  padding: isMobile ? '58px 54px 12px' : '34px 143px 78px 143px',
   zIndex: 3,
   display: "flex",
-  height: "calc(100% - 110px)"
-}
+  height: "calc(100% - 132px)"
+})
 
-export const iframeStyle: CSSProperties = {
+export const iframeStyle = (isMobile: any): CSSProperties => ({
   position: 'relative',
   zIndex: 10,
   width: '100%',
   height: '100%',
-};
+})
