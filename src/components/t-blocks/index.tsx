@@ -33,7 +33,7 @@ function TBlock() {
 
   const isMobile = useMediaQuery()
 
-  const [modalIsOpen, setIsOpen] = useState(true);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
