@@ -2,19 +2,23 @@
 
 import React, { CSSProperties, useEffect, useState } from 'react';
 import Select from 'react-select';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import close from '../../../public/close.svg';
 
-// Mockup function to check profit calculation
-function getProfit(select: string, amount: string) {
-  return `${select}_${amount}`
-}
-
-// data for select list
+// types
 type Option =  {
   value: string,
   label: string,
 }
 
+type SliderSettings =  {
+  start: number,
+  end: number,
+  step: number
+}
+
+// data for select list
 const options: Option[] = [
   { value: '1', label: '1% в день' },
   { value: '3', label: '3% в день' },
@@ -31,6 +35,7 @@ const modalTextStyle: CSSProperties = {
 const modalLabelStyle: CSSProperties = {
   marginBottom: '12px',
   textAlign: 'center',
+  userSelect: 'none'
 };
 
 const labelStyle = Object.assign(modalTextStyle, modalLabelStyle);
@@ -81,7 +86,7 @@ const selectStyles = {
     color: 'white !important',
   }),
 
-  dropdownIndicator: (baseStyle: any, state) => ({
+  dropdownIndicator: (baseStyle: any, state: any) => ({
     ...baseStyle,
     color: 'white !important',
     transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'none',
@@ -123,7 +128,61 @@ const selectStyles = {
     backgroundColor: 'unset',
     color: state.isFocused ? '#0df69e' : 'white',
   }),
-}
+};
+
+// slider setting & styles
+const SLIDER_SETTINGS = {
+  start: 0,
+  end: 100,
+  step: 10,
+  className: 'slider-element',
+};
+
+const sliderStyle = {
+  markStyle: {
+    display: 'block',
+    bottom: '-25px',
+    margin: '-5px',
+    padding: '5px',
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: '12px',
+    color: '#323232',
+    transform: 'translate(-25%, 0%)',
+    userSelect: 'none',
+  },
+  markStyleAdd: `.${SLIDER_SETTINGS.className} span[class*="active"] {color: white !important;}`,
+  sliderElement: {
+    marginTop: '30px',
+    marginBottom: '100px',
+  },
+  railStyle: {
+    borderRadius: '25px',
+    height: '4px',
+    backgroundColor: '#323232',
+  },
+  trackStyle: {
+    borderRadius: '25px',
+    height: '4px',
+    backgroundColor: '#0df69e',
+  },
+  dotStyle: {
+    bottom: '-9px',
+    width: '2px',
+    height: '23px',
+    backgroundColor: '#323232',
+    border: 'none',
+    borderRadius: '20px',
+  },
+  activeDotStyle: {
+    backgroundColor: '#0df69e',
+  },
+  handleStyle: {
+    margin: '-10px 0',
+    padding: '10px',
+    opacity: 0,
+  }
+};
 
 function ModalContent({
   onButtonClick,
@@ -215,6 +274,28 @@ function ModalContent({
         </span>
       </div>
       <p style={labelStyle}>Количество дней</p>
+      <style scoped type='text/css'>
+          {sliderStyle.markStyleAdd}
+      </style>
+      <style>
+          {}
+      </style>
+      <Slider
+        className={SLIDER_SETTINGS.className}
+        style={sliderStyle.sliderElement}
+        marks={getSliderMarks(SLIDER_SETTINGS)}
+        min={SLIDER_SETTINGS.start}
+        max={SLIDER_SETTINGS.end}
+        step={SLIDER_SETTINGS.step}
+        dots={true}
+        startPoint={0}
+        defaultValue={10}
+        railStyle={sliderStyle.railStyle}
+        trackStyle={sliderStyle.trackStyle}
+        dotStyle={sliderStyle.dotStyle}
+        activeDotStyle={sliderStyle.activeDotStyle}
+        handleStyle={sliderStyle.handleStyle}
+      />
       <div
         style={{
           display: 'flex',
@@ -222,10 +303,10 @@ function ModalContent({
           alignItems: 'baseline',
         }}
       >
-        <p style={{marginRight: '30px',flexShrink: 0 }}>Ваш профит составит:</p>
+        <p style={{...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Ваш профит составит:</p>
         <p style={{fontSize: '48px' }}>
-          <span style={{wordBreak: 'break-all'}}>{profit}</span>
-          <span style={{ marginLeft: '15px', fontSize: '24px' }}>TTTU</span>
+          <span style={{wordBreak: 'break-all', userSelect: 'none' }}>{profit}</span>
+          <span style={{ marginLeft: '15px', fontSize: '24px',  userSelect: 'none' }}>TTTU</span>
         </p>
       </div>
     </div>
@@ -233,3 +314,20 @@ function ModalContent({
 }
 
 export default ModalContent;
+
+function getSliderMarks(settings: SliderSettings) {
+  return Array.from({length: settings.end / settings.step + 1}).map((_, index) => index * settings.step).reduce((acc, item) => {
+    return {
+      ...acc,
+      [item]: {
+        style: sliderStyle.markStyle,
+        label: <span>{item}</span>
+      }
+    }
+  }, {});
+}
+
+// Mockup function to check profit calculation
+function getProfit(select: string, amount: string) {
+  return `${select}_${amount}`
+}
