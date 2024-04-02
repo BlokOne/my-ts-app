@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import React, { CSSProperties, useEffect, useState } from 'react';
 import Select from 'react-select';
 
@@ -191,6 +193,7 @@ function ModalContent({
           pattern='\d*'
           value={amount}
           onChange={(evt) => handleInput(evt)}
+          //@ts-ignore
           onClick={(evt) => evt.target.style.borderColor = '#0df69e'}
           onBlur={(evt) => evt.target.style.borderColor = '#323232'}
         />
