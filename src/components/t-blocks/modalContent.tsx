@@ -6,7 +6,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import close from '../../../public/close.svg';
 
-// types
+// ==== types ====
 type Option =  {
   value: string,
   label: string,
@@ -18,14 +18,14 @@ type SliderSettings =  {
   step: number
 }
 
-// data for select list
+// ==== data for select list ====
 const options: Option[] = [
   { value: '1', label: '1% в день' },
   { value: '3', label: '3% в день' },
   { value: '5', label: '5% в день' },
 ];
 
-// styles
+// ==== styles ====
 const modalTextStyle: CSSProperties = {
   fontWeight: '400',
   fontSize: '16px',
@@ -130,13 +130,25 @@ const selectStyles = {
   }),
 };
 
-// slider setting & styles
+// ==== slider setting & styles ====
 const SLIDER_SETTINGS = {
   start: 0,
   end: 100,
   step: 10,
   className: 'slider-element',
 };
+
+function getSliderMarks(settings: SliderSettings) {
+  return Array.from({length: settings.end / settings.step + 1}).map((_, index) => index * settings.step).reduce((acc, item) => {
+    return {
+      ...acc,
+      [item]: {
+        style: sliderStyle.markStyle,
+        label: <span>{item}</span>
+      }
+    }
+  }, {});
+}
 
 const sliderStyle = {
   markStyle: {
@@ -184,18 +196,17 @@ const sliderStyle = {
   }
 };
 
-function ModalContent({
-  onButtonClick,
-}: {
-  onButtonClick: () => void;
-}) {
+// Component
+function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
+
   const [selectedOption, setSelectedOption] = useState<Option | any>(options[0])
   const [profit, setProfit] = useState('');
   const [amount, setAmount] = useState('10000');
+  const [days, setDays] = useState('10');
 
   useEffect(() => {
-    setProfit(() => getProfit(selectedOption.value, amount));
-  }, [selectedOption, amount])
+    setProfit(() => getProfit(selectedOption.value, amount, days));
+  }, [selectedOption, amount, days])
 
   function handleSelect(option: Option | null) {
     setSelectedOption(option);
@@ -204,6 +215,10 @@ function ModalContent({
   function handleInput(evt: React.ChangeEvent<HTMLInputElement>) {
     const value = evt.target.value;
     setAmount(value);
+  }
+
+  function handleSlider(value: number | number[]) {
+    setDays(value.toString());
   }
 
   return (
@@ -295,6 +310,7 @@ function ModalContent({
         dotStyle={sliderStyle.dotStyle}
         activeDotStyle={sliderStyle.activeDotStyle}
         handleStyle={sliderStyle.handleStyle}
+        onChangeComplete={(value) => handleSlider(value)}
       />
       <div
         style={{
@@ -315,19 +331,7 @@ function ModalContent({
 
 export default ModalContent;
 
-function getSliderMarks(settings: SliderSettings) {
-  return Array.from({length: settings.end / settings.step + 1}).map((_, index) => index * settings.step).reduce((acc, item) => {
-    return {
-      ...acc,
-      [item]: {
-        style: sliderStyle.markStyle,
-        label: <span>{item}</span>
-      }
-    }
-  }, {});
-}
-
-// Mockup function to check profit calculation
-function getProfit(select: string, amount: string) {
-  return `${select}_${amount}`
+// ==== Mockup function to check profit calculation ====
+function getProfit(select: string, amount: string, days: string) {
+  return `${select}_${amount}_${days}`
 }
