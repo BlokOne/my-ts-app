@@ -2,6 +2,7 @@
 
 import React, { CSSProperties, useEffect, useState } from 'react';
 import Select from 'react-select';
+import close from '../../../public/close.svg';
 
 // Mockup function to check profit calculation
 function getProfit(select: string, amount: string) {
@@ -164,7 +165,7 @@ function ModalContent({
         aria-label='close modal'
       >
         <img
-          src='/public/close.svg'
+          src={close}
           width={20}
           height={20}
           aria-hidden='true'
