@@ -1,26 +1,31 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import React, { CSSProperties, useEffect, useState } from 'react';
+import React, { CSSProperties, useEffect, useState, useRef } from 'react';
 import Select from 'react-select';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import close from '../../../public/close.svg';
 
-// Mockup function to check profit calculation
-function getProfit(select: string, amount: string) {
-  return `${select}_${amount}`
-}
-
-// data for select list
+// ==== types ====
 type Option =  {
   value: string,
   label: string,
 }
 
+type SliderSettings =  {
+  start: number,
+  end: number,
+  step: number
+}
+
+// ==== data for select list ====
 const options: Option[] = [
   { value: '1', label: '1% в день' },
   { value: '3', label: '3% в день' },
   { value: '5', label: '5% в день' },
 ];
 
-// styles
+// ==== styles ====
 const modalTextStyle: CSSProperties = {
   fontWeight: '400',
   fontSize: '16px',
@@ -30,6 +35,7 @@ const modalTextStyle: CSSProperties = {
 const modalLabelStyle: CSSProperties = {
   marginBottom: '12px',
   textAlign: 'center',
+  userSelect: 'none'
 };
 
 const labelStyle = Object.assign(modalTextStyle, modalLabelStyle);
@@ -80,9 +86,10 @@ const selectStyles = {
     color: 'white !important',
   }),
 
-  dropdownIndicator: (baseStyle: any) => ({
+  dropdownIndicator: (baseStyle: any, state: any) => ({
     ...baseStyle,
     color: 'white !important',
+    transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'none',
   }),
 
   indicatorSeparator: () => ({
@@ -107,8 +114,8 @@ const selectStyles = {
     fontFamily: 'Inter',
     fontWeight: '400',
     fontSize: ' 24px',
-    color: ' #141316',
-    backgroundColor: '#0df69e',
+    color: 'white',
+    backgroundColor: 'rgb(20, 19, 22)',
     border: '1px solid #0df69e !important',
     borderRadius: '25px',
     outline: 'none !important',
@@ -119,22 +126,89 @@ const selectStyles = {
   option: (baseStyle: any,state: any) => ({
     ...baseStyle,
     backgroundColor: 'unset',
-    color: state.isFocused ? 'white' : '#141316',
+    color: state.isFocused ? '#0df69e' : 'white',
   }),
+};
+
+// ==== slider setting & styles ====
+const SLIDER_SETTINGS = {
+  start: 0,
+  end: 100,
+  step: 10,
+  className: 'slider-element',
+};
+
+function getSliderMarks(settings: SliderSettings) {
+  return Array.from({length: settings.end / settings.step + 1}).map((_, index) => index * settings.step).reduce((acc, item) => {
+    return {
+      ...acc,
+      [item]: {
+        style: sliderStyle.markStyle,
+        label: <span>{item}</span>
+      }
+    }
+  }, {});
 }
 
-function ModalContent({
-  onButtonClick,
-}: {
-  onButtonClick: () => void;
-}) {
+const sliderStyle = {
+  markStyle: {
+    display: 'block',
+    bottom: '-25px',
+    margin: '-10px',
+    padding: '10px',
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: '12px',
+    color: '#323232',
+    transform: 'translate(-20%, 0%)',
+    userSelect: 'none',
+  },
+  markStyleAdd: `.${SLIDER_SETTINGS.className} span[class*="active"] {color: white !important;}`,
+  sliderElement: {
+    marginTop: '30px',
+    marginBottom: '100px',
+  },
+  railStyle: {
+    borderRadius: '25px',
+    height: '4px',
+    backgroundColor: '#323232',
+  },
+  trackStyle: {
+    borderRadius: '25px',
+    height: '4px',
+    backgroundColor: '#0df69e',
+  },
+  dotStyle: {
+    bottom: '-9px',
+    width: '2px',
+    height: '23px',
+    backgroundColor: '#323232',
+    border: 'none',
+    borderRadius: '20px',
+  },
+  activeDotStyle: {
+    backgroundColor: '#0df69e',
+  },
+  handleStyle: {
+    margin: '-15px 0',
+    padding: '15px',
+    opacity: 0,
+  }
+};
+
+// Component
+function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
+
   const [selectedOption, setSelectedOption] = useState<Option | any>(options[0])
   const [profit, setProfit] = useState('');
   const [amount, setAmount] = useState('10000');
+  const [days, setDays] = useState('10');
+
+  const currencyRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    setProfit(() => getProfit(selectedOption.value, amount));
-  }, [selectedOption, amount])
+    setProfit(() => getProfit(selectedOption.value, amount, days));
+  }, [selectedOption, amount, days])
 
   function handleSelect(option: Option | null) {
     setSelectedOption(option);
@@ -143,6 +217,10 @@ function ModalContent({
   function handleInput(evt: React.ChangeEvent<HTMLInputElement>) {
     const value = evt.target.value;
     setAmount(value);
+  }
+
+  function handleSlider(value: number | number[]) {
+    setDays(value.toString());
   }
 
   return (
@@ -164,7 +242,7 @@ function ModalContent({
         aria-label='close modal'
       >
         <img
-          src='/public/close.svg'
+          src={close}
           width={20}
           height={20}
           aria-hidden='true'
@@ -194,10 +272,11 @@ function ModalContent({
           value={amount}
           onChange={(evt) => handleInput(evt)}
           //@ts-ignore
-          onClick={(evt) => evt.target.style.borderColor = '#0df69e'}
-          onBlur={(evt) => evt.target.style.borderColor = '#323232'}
+          onClick={(evt) => {const color = '#0df69e'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
+          onBlur={(evt) => {const color = 'white'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
         />
         <span
+          ref={currencyRef}
           style={{
             position: 'absolute',
             top: '35px',
@@ -205,7 +284,7 @@ function ModalContent({
             fontFamily: 'Inter',
             fontWeight: '400',
             fontSize: '24px',
-            color: '#0df69e',
+            color: 'white',
             pointerEvents: 'none',
           }}
         >
@@ -213,6 +292,29 @@ function ModalContent({
         </span>
       </div>
       <p style={labelStyle}>Количество дней</p>
+      <style scoped type='text/css'>
+          {sliderStyle.markStyleAdd}
+      </style>
+      <style>
+          {}
+      </style>
+      <Slider
+        className={SLIDER_SETTINGS.className}
+        style={sliderStyle.sliderElement}
+        marks={getSliderMarks(SLIDER_SETTINGS)}
+        min={SLIDER_SETTINGS.start}
+        max={SLIDER_SETTINGS.end}
+        step={SLIDER_SETTINGS.step}
+        dots={true}
+        startPoint={0}
+        defaultValue={10}
+        railStyle={sliderStyle.railStyle}
+        trackStyle={sliderStyle.trackStyle}
+        dotStyle={sliderStyle.dotStyle}
+        activeDotStyle={sliderStyle.activeDotStyle}
+        handleStyle={sliderStyle.handleStyle}
+        onChangeComplete={(value) => handleSlider(value)}
+      />
       <div
         style={{
           display: 'flex',
@@ -220,10 +322,10 @@ function ModalContent({
           alignItems: 'baseline',
         }}
       >
-        <p style={{marginRight: '30px',flexShrink: 0 }}>Ваш профит составит:</p>
+        <p style={{...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Ваш профит составит:</p>
         <p style={{fontSize: '48px' }}>
-          <span style={{wordBreak: 'break-all'}}>{profit}</span>
-          <span style={{ marginLeft: '15px', fontSize: '24px' }}>TTTU</span>
+          <span style={{wordBreak: 'break-all', userSelect: 'none' }}>{profit}</span>
+          <span style={{ marginLeft: '15px', fontSize: '24px',  userSelect: 'none' }}>TTTU</span>
         </p>
       </div>
     </div>
@@ -231,3 +333,8 @@ function ModalContent({
 }
 
 export default ModalContent;
+
+// ==== Mockup function to check profit calculation ====
+function getProfit(select: string, amount: string, days: string) {
+  return `${select}_${amount}_${days}`
+}
