@@ -132,6 +132,7 @@ function TBlock() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
+        ariaHideApp={false}
         contentLabel='Example Modal'
       >
         <ModalContent onButtonClick={closeModal} />
