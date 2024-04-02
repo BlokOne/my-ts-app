@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import React, { CSSProperties, useEffect, useState } from 'react';
+import React, { CSSProperties, useEffect, useState, useRef } from 'react';
 import Select from 'react-select';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
@@ -154,13 +154,13 @@ const sliderStyle = {
   markStyle: {
     display: 'block',
     bottom: '-25px',
-    margin: '-5px',
-    padding: '5px',
+    margin: '-10px',
+    padding: '10px',
     fontFamily: 'Inter',
     fontWeight: '400',
     fontSize: '12px',
     color: '#323232',
-    transform: 'translate(-25%, 0%)',
+    transform: 'translate(-20%, 0%)',
     userSelect: 'none',
   },
   markStyleAdd: `.${SLIDER_SETTINGS.className} span[class*="active"] {color: white !important;}`,
@@ -190,8 +190,8 @@ const sliderStyle = {
     backgroundColor: '#0df69e',
   },
   handleStyle: {
-    margin: '-10px 0',
-    padding: '10px',
+    margin: '-15px 0',
+    padding: '15px',
     opacity: 0,
   }
 };
@@ -203,6 +203,8 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
   const [profit, setProfit] = useState('');
   const [amount, setAmount] = useState('10000');
   const [days, setDays] = useState('10');
+
+  const currencyRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     setProfit(() => getProfit(selectedOption.value, amount, days));
@@ -270,10 +272,11 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
           value={amount}
           onChange={(evt) => handleInput(evt)}
           //@ts-ignore
-          onClick={(evt) => evt.target.style.borderColor = '#0df69e'}
-          onBlur={(evt) => evt.target.style.borderColor = '#323232'}
+          onClick={(evt) => {const color = '#0df69e'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
+          onBlur={(evt) => {const color = 'white'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
         />
         <span
+          ref={currencyRef}
           style={{
             position: 'absolute',
             top: '35px',
@@ -281,7 +284,7 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
             fontFamily: 'Inter',
             fontWeight: '400',
             fontSize: '24px',
-            color: '#0df69e',
+            color: 'white',
             pointerEvents: 'none',
           }}
         >
