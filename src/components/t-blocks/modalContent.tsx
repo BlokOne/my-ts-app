@@ -81,9 +81,10 @@ const selectStyles = {
     color: 'white !important',
   }),
 
-  dropdownIndicator: (baseStyle: any) => ({
+  dropdownIndicator: (baseStyle: any, state) => ({
     ...baseStyle,
     color: 'white !important',
+    transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : 'none',
   }),
 
   indicatorSeparator: () => ({
@@ -108,8 +109,8 @@ const selectStyles = {
     fontFamily: 'Inter',
     fontWeight: '400',
     fontSize: ' 24px',
-    color: ' #141316',
-    backgroundColor: '#0df69e',
+    color: 'white',
+    backgroundColor: 'rgb(20, 19, 22)',
     border: '1px solid #0df69e !important',
     borderRadius: '25px',
     outline: 'none !important',
@@ -120,7 +121,7 @@ const selectStyles = {
   option: (baseStyle: any,state: any) => ({
     ...baseStyle,
     backgroundColor: 'unset',
-    color: state.isFocused ? 'white' : '#141316',
+    color: state.isFocused ? '#0df69e' : 'white',
   }),
 }
 
