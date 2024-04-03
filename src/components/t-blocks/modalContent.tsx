@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import React, { CSSProperties, useEffect, useState, useRef } from 'react';
@@ -7,12 +8,12 @@ import 'rc-slider/assets/index.css';
 import close from '../../../public/close.svg';
 
 // ==== types ====
-type Option =  {
+type Option = {
   value: string,
   label: string,
 }
 
-type SliderSettings =  {
+type SliderSettings = {
   start: number,
   end: number,
   step: number
@@ -123,7 +124,7 @@ const selectStyles = {
     boxShadow: 'none',
     cursor: 'pointer',
   }),
-  option: (baseStyle: any,state: any) => ({
+  option: (baseStyle: any, state: any) => ({
     ...baseStyle,
     backgroundColor: 'unset',
     color: state.isFocused ? '#0df69e' : 'white',
@@ -139,7 +140,7 @@ const SLIDER_SETTINGS = {
 };
 
 function getSliderMarks(settings: SliderSettings) {
-  return Array.from({length: settings.end / settings.step + 1}).map((_, index) => index * settings.step).reduce((acc, item) => {
+  return Array.from({ length: settings.end / settings.step + 1 }).map((_, index) => index * settings.step).reduce((acc, item) => {
     return {
       ...acc,
       [item]: {
@@ -197,7 +198,7 @@ const sliderStyle = {
 };
 
 // Component
-function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
+function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
 
   const [selectedOption, setSelectedOption] = useState<Option | any>(options[0])
   const [profit, setProfit] = useState('');
@@ -272,8 +273,8 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
           value={amount}
           onChange={(evt) => handleInput(evt)}
           //@ts-ignore
-          onClick={(evt) => {const color = '#0df69e'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
-          onBlur={(evt) => {const color = 'white'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null}}
+          onClick={(evt) => { const color = '#0df69e'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null }}
+          onBlur={(evt) => { const color = 'white'; evt.target.style.borderColor = color; currencyRef.current ? currencyRef.current.style.color = color : null }}
         />
         <span
           ref={currencyRef}
@@ -293,10 +294,10 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
       </div>
       <p style={labelStyle}>Количество дней</p>
       <style scoped type='text/css'>
-          {sliderStyle.markStyleAdd}
+        {sliderStyle.markStyleAdd}
       </style>
       <style>
-          {}
+        { }
       </style>
       <Slider
         className={SLIDER_SETTINGS.className}
@@ -322,10 +323,10 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
           alignItems: 'baseline',
         }}
       >
-        <p style={{...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Ваш профит составит:</p>
-        <p style={{fontSize: '48px' }}>
-          <span style={{wordBreak: 'break-all', userSelect: 'none' }}>{profit}</span>
-          <span style={{ marginLeft: '15px', fontSize: '24px',  userSelect: 'none' }}>TTTU</span>
+        <p style={{ ...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Ваш профит составит:</p>
+        <p style={{ fontSize: '48px' }}>
+          <span style={{ wordBreak: 'break-all', userSelect: 'none' }}>{profit}</span>
+          <span style={{ marginLeft: '15px', fontSize: '24px', userSelect: 'none' }}>TTTU</span>
         </p>
       </div>
     </div>
@@ -334,7 +335,8 @@ function ModalContent({onButtonClick}: {onButtonClick: () => void}) {
 
 export default ModalContent;
 
-// ==== Mockup function to check profit calculation ====
 function getProfit(select: string, amount: string, days: string) {
-  return `${select}_${amount}_${days}`
+  const profit = Number(select) / 100 * Number(amount) * Number(days)
+  return typeof profit === 'number' ? profit.toFixed() : ""
+
 }

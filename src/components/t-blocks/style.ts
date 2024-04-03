@@ -13,8 +13,9 @@ export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
   } :
     {
       padding: '132px 0px',
-      display: 'flex',
+      display: 'grid',
       gap: '150px',
+      gridTemplateColumns: '1fr 1fr',
       alignItems: 'center'
     }
 
@@ -28,6 +29,16 @@ export const titleStyle: CSSProperties = {
   textAlign: "center",
   marginTop: '-35px',
 }
+
+export const imageStyle = (mobile: string): CSSProperties => ({
+  height: '86vh',
+  width: `calc(100vh * ${393 / 817})`, // Ширина вычисляется на основе соотношения сторон
+  backgroundImage: `url(${mobile})`,
+  backgroundSize: 'contain',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  display: 'flex',
+})
 
 export const textStyle: CSSProperties = {
   fontFamily: 'Inter',

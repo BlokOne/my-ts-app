@@ -58,7 +58,7 @@ function TBlock() {
       arrow: true,
       href1: '/',
       href2: '/',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      text: 'T-Staking is flagship product, which is a perpetual $TTTU staking that allows you to participate in the distribution of commissions that all T-Project products generate.',
       callback: () => console.log(1),
     },
     {
@@ -70,7 +70,7 @@ function TBlock() {
       arrow: !isMobile ? false : true,
       href1: '/',
       href2: '/',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      text: 'T-Autotrade is lucrative custom product built on a proven investment-game PvP model based on high-frequency trading of liquidity cells. The product allows you to earn returns of 1% to 1.6% or more when you activate bonuses in $TTTU tokens on a daily basis.',
       callback: !isMobile ? openModal : () => console.log(1),
     },
     {
@@ -82,7 +82,7 @@ function TBlock() {
       arrow: true,
       href1: '/',
       href2: '/',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      text: 'T-Wallet is a single internal user wallet that is automatically created when a user registers in the T-Project system. The wallet allows you to deposit, withdraw, buy, sell and borrow assets that can be used in any T-Project product.',
       callback: () => console.log(1),
     },
     {
@@ -94,7 +94,7 @@ function TBlock() {
       arrow: true,
       href1: '/',
       href2: '/',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      text: " Very soon users will be able to enjoy betting on sports and cyber sports events, make predictions on cryptocurrency rates, while betting $TTTU and earning additional Bonuses for T-Autotrade tariffs.",
       callback: () => console.log(1),
     },
     {
@@ -105,7 +105,7 @@ function TBlock() {
       arrow: true,
       href1: '/',
       href2: '/',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      text: "The T-Project team is constantly working on expanding the product line. In addition to T-Gamble, T-Poker and T-Lottery will soon be released, as well as several well-known and well-loved PvP games where users can earn TTTUs and Bonuses.",
       callback: () => console.log(1),
     },
   ];

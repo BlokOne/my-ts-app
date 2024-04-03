@@ -1,6 +1,6 @@
 import { useMediaQuery } from "../../media/useMedia"
 import Button from "../../shared/button"
-import { titleStyle, wrapper, textStyle, logoStyle, wrapperLogoStyle, textWrapper, buttonsWrapper } from "./style"
+import { titleStyle, wrapper, textStyle, logoStyle, wrapperLogoStyle, textWrapper, buttonsWrapper, imageStyle } from "./style"
 
 type ItemT = {
   mobile: string,
@@ -47,7 +47,7 @@ function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }
           </div >
           :
           <div id={id} style={wrapper(isMobile, mobile)}>
-            <img src={mobile} alt="" />
+            <div style={imageStyle(mobile)} />
             <div>
               <div style={wrapperLogoStyle}>
                 {logo && <div style={logoStyle}>
