@@ -1,7 +1,9 @@
 import { CSSProperties } from "react";
 import backgroundImage from '../../../public/7/Rectangle314.svg'
+import { CONTAINER_WIDTH } from "../../shared/style";
 
 export const wrapper = (): CSSProperties => ({
+  width: CONTAINER_WIDTH,
   color: 'white',
   display: 'flex',
   justifyContent: 'space-between',

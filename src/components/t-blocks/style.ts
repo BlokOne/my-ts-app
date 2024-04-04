@@ -1,4 +1,5 @@
-import { CSSProperties } from "react"
+import { CSSProperties } from "react";
+import { CONTAINER_WIDTH } from "../../shared/style";
 
 export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
   return isMobile ? {
@@ -12,11 +13,12 @@ export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
     backgroundRepeat: 'no-repeat' // Если не хотите, чтобы фон повторялся
   } :
     {
-      padding: '132px 0px',
       display: 'grid',
       gap: '150px',
       gridTemplateColumns: '1fr 1fr',
-      alignItems: 'center'
+      alignItems: 'center',
+      width: CONTAINER_WIDTH,
+      padding: '132px 0px',
     }
 
 }

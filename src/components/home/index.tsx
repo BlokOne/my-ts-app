@@ -1,5 +1,6 @@
 import Button from "../../shared/button"
 import { titleStyle, wrapper, wrapperModile } from "./style"
+import { CONTAINER_WIDTH } from "../../shared/style"
 
 import texts from '../../../public/1/texts.svg'
 import texts2 from '../../../public/Group301.svg'
@@ -22,7 +23,7 @@ function Title() {
         </Button>
       </div>
       {
-        !isMobile ? <div style={{ display: 'flex', gap: "167px", marginTop: '72px', alignItems: 'center', marginBottom: '99px' }}>
+        !isMobile ? <div style={{ display: 'flex', gap: "167px", width: CONTAINER_WIDTH, marginTop: '72px', alignItems: 'center', marginBottom: '99px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '109px', }}>
             <img src={bigLogo} />
             <Button width="396px" arrow={true}>
