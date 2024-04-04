@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import Small_Logo from '../../../public/1/small_logo.svg';
-
-const CONTAINER_WIDTH: string = '750px';
+import { CONTAINER_WIDTH } from '../../shared/style';
 
 const roadmapStyle = {
     trackContainer: {
@@ -44,7 +43,7 @@ const roadmapStyle = {
     },
     pathEnd: {
         flexShrink: '0',
-        width: '150px',
+        width: '150px',  // mockup width
         backgroundColor: '#0df69e',
     },
 };
