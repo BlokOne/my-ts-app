@@ -1,4 +1,6 @@
+import { CSSProperties } from 'react';
 import { roadmapStyle } from './style';
+import { MARK_COLORS } from './style';
 import roadmapData from './data.json';
 import { useEffect, useState } from 'react';
 import { getRoadmapActiveStage, ROADMAP_API } from './api';
@@ -14,18 +16,18 @@ type TActiveStage = {
     stage: number
 }
 
-function Stage({ data }: {data: TStage}) {
+function setMarkColor(activeIndex: number, id: string) {
+    return Number(id) < activeIndex ? {"--mark-color": MARK_COLORS.ACTIVE_TEAL} as CSSProperties : {"--mark-color": MARK_COLORS.BACKGROUND_GREY} as CSSProperties;
+}
+
+function Stage({ data, activeIndex }: {data: TStage,activeIndex: number}) {
     return (
-        <div style={roadmapStyle.stage}>
-            {/* @ts-expect-error ignore position in styles */}
+        <div style={setMarkColor(activeIndex, data.id)}>
             <p style={roadmapStyle.stageNumber}>{data.mark}</p>
-            {/* @ts-expect-error ignore position in styles */}
             <div style={roadmapStyle.stageMark}>
-                {/* @ts-expect-error ignore position in styles */}
                 <span style={roadmapStyle.stageMark1}></span>
-                {/* @ts-expect-error ignore position in styles */}
                 <span style={roadmapStyle.stageMark2}></span>
-                <span></span>
+                <span style={roadmapStyle.stageMark3}></span>
             </div>
             <p style={roadmapStyle.stageTitle}>{data.title}</p>
             <p style={roadmapStyle.stageText}>{data.content}</p>
@@ -43,14 +45,12 @@ function RoadmapGraph() {
     return (
         <div>
             {/* track */}
-            {/* @ts-expect-error null */}
             <div style={roadmapStyle.trackContainer}>
                 <div style={roadmapStyle.track}>
                     <span style={roadmapStyle.trackStart}></span>
                     <span style={roadmapStyle.trackMid}></span>
                     <span style={roadmapStyle.trackEnd}></span>
                 </div>
-                {/* @ts-expect-error null */}
                 <div style={roadmapStyle.path}>
                     <span style={roadmapStyle.pathStart}></span>
                     <span style={roadmapStyle.pathEnd}></span>
@@ -59,7 +59,7 @@ function RoadmapGraph() {
             {/* stages */}
             <div style={roadmapStyle.stagesContainer}>
                 {roadmapData.map((item) => {
-                    return <Stage data={item} key={item.id} />
+                    return <Stage data={item} key={item.id} activeIndex={activeStage} />
                 })}
             </div>
         </div>

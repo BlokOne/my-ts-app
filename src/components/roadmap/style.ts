@@ -1,6 +1,12 @@
+import { CSSProperties } from 'react';
 import { CONTAINER_WIDTH } from '../../shared/style';
 
-export const roadmapStyle = {
+export const MARK_COLORS: { [key: string]: string } = {
+    BACKGROUND_GREY: '#313032',
+    ACTIVE_TEAL: '#0df69e',
+}
+
+export const roadmapStyle: { [key: string]: CSSProperties } = {
     trackContainer: {
         position: 'relative',
         width: '100%',
@@ -55,8 +61,6 @@ export const roadmapStyle = {
         fontFamily: 'Inter',
         color: 'white',
     },
-    stage: {
-    },
     stageNumber: {
         width: 'min-content',
         marginBottom: '16px',
@@ -68,29 +72,41 @@ export const roadmapStyle = {
         position: 'relative',
         width: '55px',
         height: '55px',
-        backgroundColor: 'rgba(13, 246, 158, 0.1)',
         borderRadius: '50%',
     },
     stageMark1: {
         position: 'absolute',
         left: '50%',
         top: '50%',
-        width: '45px',
-        height: '45px',
-        backgroundColor: 'rgba(13, 246, 158, 0.5)',
+        width: '55px',
+        height: '55px',
+        backgroundColor: 'var(--mark-color)',
+        opacity: '0.1',
         borderRadius: '50%',
-        boxShadow: '0 0 20px 0 #0df69e',
         transform: 'translate(-50%, -50%)'
     },
     stageMark2: {
         position: 'absolute',
         left: '50%',
         top: '50%',
+        width: '45px',
+        height: '45px',
+        backgroundColor: 'var(--mark-color)',
+        borderRadius: '50%',
+        boxShadow: '0 0 20px 0 var(--mark-color)',
+        opacity: '0.5',
+        transform: 'translate(-50%, -50%)'
+    },
+    stageMark3: {
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
         width: '25px',
         height: '25px',
-        backgroundColor: 'rgba(13, 246, 158, 1)',
+        backgroundColor: 'var(--mark-color)',
         borderRadius: '50%',
-        boxShadow: '0 0 20px 0 #0df69e',
+        opacity: '1',
+        boxShadow: '0 0 20px 0 var(--mark-color)',
         transform: 'translate(-50%, -50%)'
     },
     stageTitle: {
