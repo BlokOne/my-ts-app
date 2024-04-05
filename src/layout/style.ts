@@ -12,7 +12,7 @@ export const backgroundStyle: CSSProperties = {
   position: 'relative'
 };
 
-export const mainStyle = (isMobile: boolean): CSSProperties => ({
+export const mainStyle = (isMobile: any): CSSProperties => ({
   scrollBehavior: "smooth",
   width: isMobile ? "400px" : '100%',
   display: 'flex',
