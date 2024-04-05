@@ -7,6 +7,9 @@ export const MARK_COLORS: { [key: string]: string } = {
 }
 
 export const roadmapStyle: { [key: string]: CSSProperties } = {
+    wrapper: {
+        paddingTop: '150px',
+    },
     trackContainer: {
         position: 'relative',
         width: '100%',
@@ -38,17 +41,24 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
         left: '0',
         top: '0',
         display: 'flex',
-        width: '26%', // mockup width
+        width: '100%',
         height: '100%'
     },
     pathStart: {
-        flexGrow: '1',
+        flexGrow: '0',
+        width: `calc((100% - ${CONTAINER_WIDTH}) / 2)`,
         background: 'linear-gradient(to right, rgba(13,246,158,0) 0%, rgba(13,246,158,1) 100%)',
     },
-    pathEnd: {
+    pathMid: {
         flexShrink: '0',
-        width: '150px',  // mockup width
+        width: CONTAINER_WIDTH,
+    },
+    pathEnd: {
+        display: 'block',
+        minWidth: '35px',
+        height: '100%',
         backgroundColor: '#0df69e',
+        transition: 'width 0.5s ease',
     },
     stagesContainer: {
         display: 'grid',
@@ -56,7 +66,7 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
         gridTemplateColumns: 'repeat(4, 1fr)',
         width: CONTAINER_WIDTH,
         margin: '0 auto',
-        marginTop: '-81px',
+        marginTop: '-82.5px',
         marginBottom: '300px',
         fontFamily: 'Inter',
         color: 'white',

@@ -20,6 +20,10 @@ function setMarkColor(activeIndex: number, id: string) {
     return Number(id) < activeIndex ? {"--mark-color": MARK_COLORS.ACTIVE_TEAL} as CSSProperties : {"--mark-color": MARK_COLORS.BACKGROUND_GREY} as CSSProperties;
 }
 
+function setPathWidth(activeIndex: number) {
+    return {width: `calc(${(100 - 17) / 3 * (activeIndex - 1)}% + 30px)`} as CSSProperties; // 30px - halwidth of marker, 17 - some magic
+}
+
 function Stage({ data, activeIndex }: {data: TStage,activeIndex: number}) {
     return (
         <div style={setMarkColor(activeIndex, data.id)}>
@@ -39,11 +43,19 @@ function RoadmapGraph() {
     const [activeStage, setActiveStage] = useState<number>(1)
 
     useEffect(() => {
-        getRoadmapActiveStage(ROADMAP_API).then(res => res.json()).then((data: TActiveStage) => setActiveStage(data.stage));
+        getRoadmapActiveStage(ROADMAP_API)
+            .then(res => res.json())
+            .then((data: TActiveStage) =>  {
+                if (data.stage <= roadmapData.length) {
+                    setActiveStage(data.stage)
+                } else {
+                    setActiveStage(roadmapData.length)
+                }
+            });
     }, [])
 
     return (
-        <div>
+        <div style={roadmapStyle.wrapper}>
             {/* track */}
             <div style={roadmapStyle.trackContainer}>
                 <div style={roadmapStyle.track}>
@@ -53,7 +65,9 @@ function RoadmapGraph() {
                 </div>
                 <div style={roadmapStyle.path}>
                     <span style={roadmapStyle.pathStart}></span>
-                    <span style={roadmapStyle.pathEnd}></span>
+                    <span style={roadmapStyle.pathMid}>
+                        <span style={{...setPathWidth(activeStage), ...roadmapStyle.pathEnd}}></span>
+                    </span>
                 </div>
             </div>
             {/* stages */}
