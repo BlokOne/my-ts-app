@@ -6,6 +6,7 @@ import Layout from "./layout";
 import Referral from "./components/referral";
 import TStaking from "./components/tStaking";
 import BuySell from "./components/buySell";
+import Roadmap from "./components/roadmap";
 import { MediaQueryProvider } from "./media";
 
 
@@ -20,6 +21,7 @@ function App() {
         <Title />
         <TBlock />
         <Video />
+        <Roadmap />
         <BuySell />
         <TStaking />
         <Referral />
