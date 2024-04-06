@@ -16,6 +16,8 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
     container: {
         paddingTop: `${STAGES_OFFSET}px`,
         overflow: 'auto',
+        scrollbarColor: '#0df69e transparent',
+        scrollbarWidth: 'thin',
     },
 
     fadeBoxStart: {
