@@ -5,7 +5,7 @@ import { roadmapStyle } from './style';
 import { trackStyle } from './style';
 import { stagesStyle } from './style';
 import { MARK_COLORS } from './style';
-import { getRoadmapActiveStage, ROADMAP_API } from './api';
+import { getRoadmapActiveStage } from './api';
 import roadmapData from './data.json';
 
 type TStage = {
