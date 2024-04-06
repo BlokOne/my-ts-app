@@ -17,7 +17,7 @@ function Title() {
     <>
       <div style={wrapper()}>
         <h1 style={titleStyle(isMobile)}>T-Project</h1>
-        {!isMobile ? <img style={{ height: '50%', maxHeight: '600px', marginBottom: '15px' }} src={texts} /> : <img style={{ width: '100%' }} src={texts2} />}
+        {!isMobile ? <img style={{ height: '50%', maxHeight: '600px', marginBottom: '15px' }} src={texts} /> : <img style={{ width: '100%', padding: '0 40px', boxSizing: 'border-box' }} src={texts2} />}
         <Button width="326px">
           Buy TTTU on MEXC
         </Button>

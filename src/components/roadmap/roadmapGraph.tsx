@@ -1,9 +1,10 @@
 import { CSSProperties } from 'react';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from '../../media/useMedia';
 import { roadmapStyle } from './style';
 import { MARK_COLORS } from './style';
-import roadmapData from './data.json';
-import { useEffect, useState } from 'react';
 import { getRoadmapActiveStage, ROADMAP_API } from './api';
+import roadmapData from './data.json';
 
 type TStage =  {
     id: string,
@@ -41,6 +42,7 @@ function Stage({ data, activeIndex }: {data: TStage,activeIndex: number}) {
 
 function RoadmapGraph() {
     const [activeStage, setActiveStage] = useState<number>(1)
+    const isMobile = useMediaQuery();
 
     useEffect(() => {
         getRoadmapActiveStage(ROADMAP_API)

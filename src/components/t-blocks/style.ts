@@ -3,6 +3,8 @@ import { CONTAINER_WIDTH } from "../../shared/style";
 
 export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
   return isMobile ? {
+    width: '400px',
+    margin: '0 auto',
     padding: '434px 0px 104px 0px',
     display: 'flex',
     gap: '20px',

@@ -8,7 +8,7 @@ export const MARK_COLORS: { [key: string]: string } = {
 
 export const roadmapStyle: { [key: string]: CSSProperties } = {
     wrapper: {
-        paddingTop: '150px',
+        paddingTop: '250px',
     },
     trackContainer: {
         position: 'relative',
@@ -67,7 +67,6 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
         width: CONTAINER_WIDTH,
         margin: '0 auto',
         marginTop: '-82.5px',
-        marginBottom: '300px',
         fontFamily: 'Inter',
         color: 'white',
     },
