@@ -8,7 +8,7 @@ import { MARK_COLORS } from './style';
 import { getRoadmapActiveStage, ROADMAP_API } from './api';
 import roadmapData from './data.json';
 
-type TStage =  {
+type TStage = {
     id: string,
     mark: string,
     title: string,
@@ -20,21 +20,21 @@ type TActiveStage = {
 }
 
 function setMarkColor(activeIndex: number, id: string) {
-    return Number(id) < activeIndex ? {"--mark-color": MARK_COLORS.ACTIVE_TEAL} as CSSProperties : {"--mark-color": MARK_COLORS.BACKGROUND_GREY} as CSSProperties;
+    return Number(id) < activeIndex ? { "--mark-color": MARK_COLORS.ACTIVE_TEAL } as CSSProperties : { "--mark-color": MARK_COLORS.BACKGROUND_GREY } as CSSProperties;
 }
 
 function setPathWidth(activeIndex: number, isMobile: any) {
     const index = activeIndex > 4 ? 4 : activeIndex;
-    let widthCSS = {width: `calc(${(100 - 17) / 3 * (index - 1)}% + 30px)`} as CSSProperties; // 30px - halfwidth of marker, 17 - some magic
+    let widthCSS = { width: `calc(${(100 - 17) / 3 * (index - 1)}% + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 17 - some magic
 
     if (isMobile) {
-        widthCSS =  {width: `calc(${(100-27) / 3 * (index - 1)}% + 60px + 30px)`} as CSSProperties; // 30px - halfwidth of marker, 60px - padding, 27 - some magic
+        widthCSS = { width: `calc(${(100 - 27) / 3 * (index - 1)}% + 60px + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 60px - padding, 27 - some magic
     }
 
     return widthCSS;
 }
 
-function Stage({ data, activeIndex }: { data: TStage,activeIndex: number }) {
+function Stage({ data, activeIndex }: { data: TStage, activeIndex: number }) {
     return (
         <div style={setMarkColor(activeIndex, data.id)}>
             <p style={stagesStyle.stageNumber}>{data.mark}</p>
@@ -54,9 +54,9 @@ function RoadmapGraph() {
     const isMobile = useMediaQuery();
 
     useEffect(() => {
-        getRoadmapActiveStage(ROADMAP_API)
+        getRoadmapActiveStage()
             .then(res => res.json())
-            .then((data: TActiveStage) =>  {
+            .then((data: TActiveStage) => {
                 if (data.stage <= roadmapData.length) {
                     setActiveStage(data.stage)
                 } else {
@@ -66,7 +66,7 @@ function RoadmapGraph() {
     }, [])
 
     return (
-        <div style={{...roadmapStyle.wrapper, ...{paddingTop: isMobile ? '75px' : '225px',}} }>
+        <div style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
             <div style={roadmapStyle.container}>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>
@@ -78,22 +78,22 @@ function RoadmapGraph() {
                     <div style={trackStyle.path}>
                         <span style={trackStyle.pathStart}></span>
                         <span style={trackStyle.pathMid}>
-                            <span style={{...setPathWidth(activeStage, isMobile), ...trackStyle.pathEnd}}></span>
+                            <span style={{ ...setPathWidth(activeStage, isMobile), ...trackStyle.pathEnd }}></span>
                         </span>
                     </div>
                 </div>
                 {/* stages */}
-                <div style={{...stagesStyle.stagesContainer, padding: isMobile ? '0 60px' : 'none'}}>
+                <div style={{ ...stagesStyle.stagesContainer, padding: isMobile ? '0 60px' : 'none' }}>
                     {roadmapData.map((item) => {
                         return <Stage data={item} key={item.id} activeIndex={activeStage} />
                     })}
                 </div>
             </div>
             {isMobile ? (
-            <>
-                <div style={roadmapStyle.fadeBoxStart}></div>
-                <div style={roadmapStyle.fadeBoxEnd}></div>
-            </>
+                <>
+                    <div style={roadmapStyle.fadeBoxStart}></div>
+                    <div style={roadmapStyle.fadeBoxEnd}></div>
+                </>
             ) : null}
         </div>
     );
