@@ -127,9 +127,9 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
         fontSize: '18px',
     },
     stageText: {
-        // width: '67%',
         margin: '0',
         fontWeight: '400',
-        fontSize: '16px',
+        fontSize: '14px',
+        whiteSpace: 'pre-wrap'
     },
 };
