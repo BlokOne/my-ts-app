@@ -1,15 +1,43 @@
 import { CSSProperties } from 'react';
 import { CONTAINER_WIDTH } from '../../shared/style';
 
+const STAGES_OFFSET: string = '82.5';
+
 export const MARK_COLORS: { [key: string]: string } = {
     BACKGROUND_GREY: '#313032',
     ACTIVE_TEAL: '#0df69e',
-}
+};
 
 export const roadmapStyle: { [key: string]: CSSProperties } = {
     wrapper: {
-        paddingTop: '250px',
+        position: 'relative',
     },
+
+    container: {
+        paddingTop: `${STAGES_OFFSET}px`,
+        overflow: 'auto',
+    },
+
+    fadeBoxStart: {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '15%',
+        height: '100%',
+        background: 'linear-gradient(90deg, rgba(20,19,22, 1) 0%, rgba(20,19,22, 0) 100%)',
+    },
+
+    fadeBoxEnd: {
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        width: '25%',
+        height: '100%',
+        background: 'linear-gradient(90deg, rgba(20,19,22, 0) 0%, rgba(20,19,22, 1) 100%)',
+    }
+};
+
+export const trackStyle: { [key: string]: CSSProperties } = {
     trackContainer: {
         position: 'relative',
         width: '100%',
@@ -60,15 +88,20 @@ export const roadmapStyle: { [key: string]: CSSProperties } = {
         backgroundColor: '#0df69e',
         transition: 'width 0.5s ease',
     },
+};
+
+export const stagesStyle: { [key: string]: CSSProperties } = {
     stagesContainer: {
         display: 'grid',
         gap: '11%',
         gridTemplateColumns: 'repeat(4, 1fr)',
         width: CONTAINER_WIDTH,
         margin: '0 auto',
-        marginTop: '-82.5px',
+        marginTop: `-${STAGES_OFFSET}px`,
+        marginBottom: '50px',
         fontFamily: 'Inter',
         color: 'white',
+        boxSizing: 'border-box',
     },
     stageNumber: {
         width: 'min-content',
