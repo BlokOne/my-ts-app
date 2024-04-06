@@ -15,10 +15,11 @@ export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
     {
       display: 'grid',
       gap: '150px',
-      gridTemplateColumns: '1fr 1fr',
+      gridTemplateColumns: 'calc(50% - 75px) calc(50% - 75px)',
       alignItems: 'center',
       width: CONTAINER_WIDTH,
       padding: '132px 0px',
+      maxHeight: '800px'
     }
 
 }
@@ -33,8 +34,8 @@ export const titleStyle: CSSProperties = {
 }
 
 export const imageStyle = (mobile: string): CSSProperties => ({
-  height: '86vh',
-  width: `calc(100vh * ${393 / 817})`, // Ширина вычисляется на основе соотношения сторон
+  height: '80vh',
+  width: `calc(100% - 0px)`,
   backgroundImage: `url(${mobile})`,
   backgroundSize: 'contain',
   backgroundPosition: 'center',

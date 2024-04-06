@@ -13,7 +13,7 @@ function Video() {
             <div style={background}></div >
             <div style={videoStyle(isMobile)} >
               <iframe
-                src={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
+                src={'https://www.youtube.com/watch?v=g1lCK8YzRwY'}
                 style={iframeStyle()}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -31,7 +31,7 @@ function Video() {
             <div style={background}></div>
             <div style={videoStyle(isMobile)} >
               <iframe
-                src={'https://www.youtube.com/embed/dQw4w9WgXcQ'}
+                src={'https://www.youtube.com/watch?v=g1lCK8YzRwY'}
                 style={iframeStyle()}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -6,7 +6,7 @@ export const footerStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  paddingBottom: "42px"
+  paddingBottom: "142px"
 }
 
 export const wrapperStyle: CSSProperties = {

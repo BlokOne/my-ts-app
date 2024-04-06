@@ -20,7 +20,7 @@ export default function BuySell() {
             <p style={titleStyle(isMobile)}>Buy/Sell TTTU</p>
             <p style={subTitleStyle(isMobile)}>on <span><img src={icon} alt="" /></span></p>
             <p style={textStyle(isMobile)}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+              The TTTU token is traded on the MEXC exchange. You can buy and sell tokens, send them to T-Wallet, and trade directly with the T-Tap product. Additionally, MEXC supports USDT on the EOS network.
             </p>
             <div style={wrapperIconsStyle()}>
               <a href="/">
@@ -47,7 +47,7 @@ export default function BuySell() {
                 <p style={titleStyle(isMobile)}>Buy/Sell TTTU</p>
                 <p style={subTitleStyle(isMobile)}>on <span><img src={icon} alt="" /></span></p>
                 <p style={textStyle(isMobile)}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                  The TTTU token is traded on the MEXC exchange. You can buy and sell tokens, send them to T-Wallet, and trade directly with the T-Tap product. Additionally, MEXC supports USDT on the EOS network.
                 </p>
                 <div style={wrapperIconsStyle()}>
                   <a href="/">

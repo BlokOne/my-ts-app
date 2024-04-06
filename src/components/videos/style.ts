@@ -2,6 +2,7 @@ import { CSSProperties } from 'react'
 import backgroundImage from '../../../public/mac.svg'
 
 export const container = (isMobile: any): CSSProperties => ({
+  paddingTop: isMobile ? '85px' : '304px',
   width: isMobile ? '100%' : '1140px',
   maxWidth: isMobile ? '440px' : '1140px',
   paddingBottom: isMobile ? '85px' : '304px',

@@ -48,7 +48,7 @@ function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }
           :
           <div id={id} style={wrapper(isMobile, mobile)}>
             <div style={imageStyle(mobile)} />
-            <div>
+            <div style={{ height: '80%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', maxHeight: '800px' }}>
               <div style={wrapperLogoStyle}>
                 {logo && <div style={logoStyle}>
                   <img src={logo} />
