@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-import backgroundImage from '../../../public/7/Rectangle314.svg'
 import { CONTAINER_WIDTH } from "../../shared/style";
 
 export const wrapper = (): CSSProperties => ({
@@ -48,7 +47,7 @@ export const wrapperIconsStyle = (): CSSProperties => ({
 
 })
 
-export const wrapperButtonStyle = (): CSSProperties => ({
+export const wrapperButtonStyle = (backgroundImage: string): CSSProperties => ({
   backgroundImage: `url(${backgroundImage})`,
   paddingTop: "49px",
   width: '423px',

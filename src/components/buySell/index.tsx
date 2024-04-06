@@ -7,6 +7,7 @@ import icon2 from '../../../public/7/Group392.svg'
 import Button from '../../shared/button'
 import { subTitleStyle, textStyle, titleStyle, wrapper, wrapperButtonStyle, wrapperIconsStyle, wrapperInfo, wrapperModile2 } from './style'
 import { useMediaQuery } from '../../media/useMedia'
+import backgroundImage from '../../../public/7/Rectangle314.svg'
 
 
 export default function BuySell() {
@@ -30,7 +31,7 @@ export default function BuySell() {
                 <img src={icon1} alt="" />
               </a>
             </div>
-            <div style={wrapperButtonStyle()}>
+            <div style={wrapperButtonStyle(backgroundImage)}>
               <p style={{
                 fontWeight: 'bold',
                 fontSize: '30px'
@@ -57,7 +58,7 @@ export default function BuySell() {
                     <img src={icon1} alt="" />
                   </a>
                 </div>
-                <div style={wrapperButtonStyle()}>
+                <div style={wrapperButtonStyle(backgroundImage)}>
                   <p style={{
                     fontWeight: 'bold',
                     fontSize: '30px'
