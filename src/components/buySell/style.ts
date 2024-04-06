@@ -19,24 +19,24 @@ export const wrapperInfo = (): CSSProperties => ({
 
 export const titleStyle = (isMobile: any): CSSProperties => ({
   fontWeight: 'bold',
-  fontSize: isMobile ? '59px' : '60px',
+  fontSize: isMobile ? '60px' : '60px',
   height: '73px',
   marginBottom: "15px",
-  marginLeft: isMobile ? '12px' : '0'
+  marginLeft: isMobile ? '0px' : '0'
 })
 
 export const subTitleStyle = (isMobile: any): CSSProperties => ({
   fontWeight: 'bold',
   fontSize: '24px',
   marginBottom: "39px",
-  marginLeft: isMobile ? '12px' : '0'
+  marginLeft: isMobile ? '0px' : '0'
 })
 
 export const textStyle = (isMobile: any): CSSProperties => ({
   fontSize: '16px',
   marginBottom: "32px",
   fontWeight: 300,
-  marginLeft: isMobile ? '12px' : '0'
+  marginLeft: isMobile ? '0px' : '0'
 })
 
 export const wrapperIconsStyle = (): CSSProperties => ({
@@ -63,16 +63,17 @@ export const wrapperButtonStyle = (): CSSProperties => ({
 
 
 export const wrapperModile2 = (value: any): CSSProperties => ({
-  color: 'white',
-  backgroundImage: `url(${value})`,
-  height: 'calc(1752px)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
+  alignItems: 'flex-start',
+  width: '432px',
+  height: 'calc(1752px)',
+  margin: '0 auto',
   marginBottom: '80px',
+  marginTop: '-597px',
+  color: 'white',
+  backgroundImage: `url(${value})`,
   backgroundSize: '97% 100%',
   backgroundPosition: 'center',
-  alignItems: 'flex-start',
-  marginTop: '-497px'
-
 })

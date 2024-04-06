@@ -14,7 +14,8 @@ export const backgroundStyle: CSSProperties = {
 
 export const mainStyle = (isMobile: any): CSSProperties => ({
   scrollBehavior: "smooth",
-  width: isMobile ? "400px" : '100%',
+  // width: isMobile ? "400px" : '100%',
+  width: isMobile ? "100%" : '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
