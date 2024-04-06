@@ -47,8 +47,7 @@ export const wrapperIconsStyle = (): CSSProperties => ({
 
 })
 
-export const wrapperButtonStyle = (backgroundImage: string): CSSProperties => ({
-  backgroundImage: `url(${backgroundImage})`,
+export const wrapperButtonStyle = (): CSSProperties => ({
   paddingTop: "49px",
   width: '423px',
   paddingBottom: '49px',
