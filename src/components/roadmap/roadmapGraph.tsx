@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from '../../media/useMedia';
-import { MARK_COLORS, roadmapStyle, scrollbarStyle, trackStyle, stagesStyle } from './style';
+import { MARK_COLORS, roadmapStyle, trackStyle, stagesStyle } from './style';
 import './style.css';
 import { getRoadmapActiveStage } from './api';
 import roadmapData from './data.json';
