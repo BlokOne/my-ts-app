@@ -5,6 +5,12 @@ import { videoStyle, container, background, iframeStyle } from "./style"
 function Video() {
   const isMobile = useMediaQuery()
 
+  const downloadFile = async () => {
+    const url = 'https://shiner-powerful-coyote.ngrok-free.app/api/v2/file/';
+    window.open(url, '_blank')!.focus();
+  };
+
+
   return (
     <>
       {
@@ -22,7 +28,7 @@ function Video() {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: '-34px', zIndex: 100 }}>
-              <Button width="352px">
+              <Button onClick={downloadFile} width="352px">
                 Скачать PDF Презентацию
               </Button>
             </div>
@@ -40,7 +46,7 @@ function Video() {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: '-34px', zIndex: 100 }}>
-              <Button width="374px">
+              <Button onClick={downloadFile} width="374px">
                 Скачать PDF Презентацию
               </Button>
             </div>
