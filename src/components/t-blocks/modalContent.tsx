@@ -301,9 +301,6 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
       <style scoped type='text/css'>
         {sliderStyle.markStyleAdd}
       </style>
-      <style>
-        { }
-      </style>
       <Slider
         className={SLIDER_SETTINGS.className}
         style={sliderStyle.sliderElement}
@@ -319,7 +316,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
         dotStyle={sliderStyle.dotStyle}
         activeDotStyle={sliderStyle.activeDotStyle}
         handleStyle={sliderStyle.handleStyle}
-        onChangeComplete={(value) => handleSlider(value)}
+        onChange={(value) => handleSlider(value)}
       />
       <div
         style={{
