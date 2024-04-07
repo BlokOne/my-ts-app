@@ -1,10 +1,7 @@
 import { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from '../../media/useMedia';
-import { roadmapStyle } from './style';
-import { trackStyle } from './style';
-import { stagesStyle } from './style';
-import { MARK_COLORS } from './style';
+import { MARK_COLORS, roadmapStyle, scrollbarStyle, trackStyle, stagesStyle } from './style';
 import { getRoadmapActiveStage } from './api';
 import roadmapData from './data.json';
 
@@ -68,6 +65,9 @@ function RoadmapGraph() {
     return (
         <div  style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
             <div style={roadmapStyle.container}>
+                <style type="text/css">
+                    {scrollbarStyle}
+                </style>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>
                     <div style={trackStyle.track}>

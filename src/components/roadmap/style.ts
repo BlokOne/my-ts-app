@@ -1,12 +1,14 @@
 import { CSSProperties } from 'react';
 import { CONTAINER_WIDTH } from '../../shared/style';
 
-const STAGES_OFFSET: string = '82.5';
+const STAGES_OFFSET: string = '82.5'; // move stages container up over the track
 
 export const MARK_COLORS: { [key: string]: string } = {
     BACKGROUND_GREY: '#313032',
     ACTIVE_TEAL: '#0df69e',
 };
+
+export  const scrollbarStyle: string = `div::-webkit-scrollbar {width: 4px;} div::-webkit-scrollbar-track {background: transparent;} div::-webkit-scrollbar-thumb {background-color: ${MARK_COLORS.ACTIVE_TEAL}; border-radius: 2px; border: transparent;}`;
 
 export const roadmapStyle: { [key: string]: CSSProperties } = {
     wrapper: {
