@@ -3,7 +3,8 @@
   }
 
 .scroll-container::-webkit-scrollbar {
-    width: 4px;
+    width: 0px;
+    -webkit-appearance: none;
   }
 
 .scroll-container::-webkit-scrollbar-track {
