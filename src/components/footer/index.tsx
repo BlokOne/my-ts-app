@@ -78,13 +78,13 @@ const items = [
     title: "Support",
     button: 'Contact',
     icon: support,
-    href: ''
+    href: 'tg://resolve?domain=t_project_support_bot'
   },
   {
     title: "Docs",
     button: 'Read more',
     icon: docs,
-    href: ''
+    href: 'https://t-project.gitbook.io/docs'
   }
   , {
     title: "Mail",
