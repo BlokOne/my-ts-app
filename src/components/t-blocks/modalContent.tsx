@@ -61,6 +61,7 @@ const inputStyle: CSSProperties = {
   outline: 'none',
   boxSizing: 'border-box',
   cursor: 'pointer',
+  appearance: 'textfield',
 };
 
 const selectStyles = {
