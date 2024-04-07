@@ -8,7 +8,7 @@ export const MARK_COLORS: { [key: string]: string } = {
     ACTIVE_TEAL: '#0df69e',
 };
 
-export  const scrollbarStyle: string = `div::-webkit-scrollbar {width: 4px;} div::-webkit-scrollbar-track {background: transparent;} div::-webkit-scrollbar-thumb {background-color: ${MARK_COLORS.ACTIVE_TEAL}; border-radius: 2px; border: transparent;}`;
+export  const scrollbarStyle: string = `.scroll-container::-webkit-scrollbar {width: 4px;} .scroll-container::-webkit-scrollbar-track {background: transparent;} .scroll-container::-webkit-scrollbar-thumb {background-color: ${MARK_COLORS.ACTIVE_TEAL}; border-radius: 2px; border: transparent;}`;
 
 export const roadmapStyle: { [key: string]: CSSProperties } = {
     wrapper: {
