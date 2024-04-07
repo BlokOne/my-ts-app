@@ -97,7 +97,7 @@ export const trackStyle: { [key: string]: CSSProperties } = {
 export const stagesStyle: { [key: string]: CSSProperties } = {
     stagesContainer: {
         display: 'grid',
-        gap: '11%',
+        gap: '5%',
         gridTemplateColumns: 'repeat(4, 1fr)',
         width: CONTAINER_WIDTH,
         margin: '0 auto',
@@ -113,6 +113,7 @@ export const stagesStyle: { [key: string]: CSSProperties } = {
         fontWeight: '700',
         fontSize: '30px',
         userSelect: 'none',
+        transform: 'translateX(calc(-50% + 27px))', // move stage-number at the center of marker
     },
     stageMark: {
         position: 'relative',
@@ -164,6 +165,7 @@ export const stagesStyle: { [key: string]: CSSProperties } = {
     },
     stageText: {
         margin: '0',
+        marginLeft: '10px',
         fontWeight: '400',
         fontSize: '14px',
         whiteSpace: 'pre-wrap'

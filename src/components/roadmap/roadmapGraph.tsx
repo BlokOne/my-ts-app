@@ -1,8 +1,7 @@
 import { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from '../../media/useMedia';
-import { MARK_COLORS, roadmapStyle, trackStyle, stagesStyle } from './style';
-import './style.css';
+import { MARK_COLORS, roadmapStyle, scrollbarStyle, trackStyle, stagesStyle } from './style';
 import { getRoadmapActiveStage } from './api';
 import roadmapData from './data.json';
 
@@ -23,10 +22,10 @@ function setMarkColor(activeIndex: number, id: string) {
 
 function setPathWidth(activeIndex: number, isMobile: any) {
     const index = activeIndex > 4 ? 4 : activeIndex;
-    let widthCSS = { width: `calc(${(100 - 17) / 3 * (index - 1)}% + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 17 - some magic
+    let widthCSS = { width: `calc(${(100 - 21) / 3 * (index - 1)}% + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 21 - some magic
 
     if (isMobile) {
-        widthCSS = { width: `calc(${(100 - 27) / 3 * (index - 1)}% + 60px + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 60px - padding, 27 - some magic
+        widthCSS = { width: `calc(${(100 - 31) / 3 * (index - 1)}% + 60px + 30px)` } as CSSProperties; // 30px - halfwidth of marker, 60px - padding, 31 - some magic
     }
 
     return widthCSS;
@@ -65,7 +64,7 @@ function RoadmapGraph() {
 
     return (
         <div  style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
-            {/* <style type="text/css">{scrollbarStyle}</style> */}
+            <style type="text/css">{scrollbarStyle}</style>
             <div className='scroll-container' style={roadmapStyle.container}>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>
