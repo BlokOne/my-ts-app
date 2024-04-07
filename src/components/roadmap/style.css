@@ -1,3 +1,7 @@
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+
 .scroll-container::-webkit-scrollbar {
     width: 4px;
   }
