@@ -22,8 +22,12 @@ type SliderSettings = {
 // ==== data for select list ====
 const options: Option[] = [
   { value: '1', label: '1% в день' },
-  { value: '3', label: '3% в день' },
-  { value: '5', label: '5% в день' },
+  { value: '1.1', label: '1.1% в день' },
+  { value: '1.2', label: '1.2% в день' },
+  { value: '1.3', label: '1.3% в день' },
+  { value: '1.5', label: '1.5% в день' },
+  { value: '1.6', label: '1.6% в день' },
+  { value: '1.7', label: '1.7% в день' }
 ];
 
 // ==== styles ====
@@ -265,7 +269,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
           style={inputStyle}
           name='amount'
           id='amount'
-          type='text'
+          type='number'
           inputMode='numeric'
           min={0}
           step={1}
