@@ -17,6 +17,7 @@ type ItemT = {
 }
 
 function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }: ItemT) {
+  console.log(button)
   const isMobile = useMediaQuery()
   return (
     <>
@@ -48,7 +49,7 @@ function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }
           :
           <div id={id} style={wrapper(isMobile, mobile)}>
             <div style={imageStyle(mobile)} />
-            <div style={{ height: '80%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', maxHeight: '800px' }}>
+            <div style={{ height: '80%', display: 'flex', flexDirection: 'column', justifyContent: button === 'RoadMap' ? 'center' : 'space-between', maxHeight: '800px' }}>
               <div style={wrapperLogoStyle}>
                 {logo && <div style={logoStyle}>
                   <img src={logo} />

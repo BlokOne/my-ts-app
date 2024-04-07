@@ -3,7 +3,7 @@ import { CONTAINER_WIDTH } from "../../shared/style";
 
 export const wrapper = (isMobile: any, mobile: string): CSSProperties => {
   return isMobile ? {
-    width: '400px',
+    width: '355px',
     margin: '0 auto',
     padding: '434px 0px 104px 0px',
     display: 'flex',
@@ -37,6 +37,7 @@ export const titleStyle: CSSProperties = {
 
 export const imageStyle = (mobile: string): CSSProperties => ({
   height: '80vh',
+  maxHeight: '800px',
   width: `calc(100% - 0px)`,
   backgroundImage: `url(${mobile})`,
   backgroundSize: 'contain',

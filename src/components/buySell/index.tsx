@@ -24,13 +24,13 @@ export default function BuySell() {
             </p>
             <div style={wrapperIconsStyle()}>
               <a href="/">
-                <img src={icon2} alt="" />
+                <img src={icon2} style={{ width: "175px" }} alt="" />
               </a>
               <a href="/">
-                <img src={icon1} alt="" />
+                <img src={icon1} style={{ width: "175px" }} alt="" />
               </a>
             </div>
-            <div className='buttonsWrapper' style={wrapperButtonStyle()}>
+            <div className='buttonsWrapper' style={wrapperButtonStyle(isMobile)}>
               <p style={{
                 fontWeight: 'bold',
                 fontSize: '30px'
@@ -57,7 +57,7 @@ export default function BuySell() {
                     <img src={icon1} alt="" />
                   </a>
                 </div>
-                <div className='buttonsWrapper' style={wrapperButtonStyle()}>
+                <div className='buttonsWrapper' style={wrapperButtonStyle(isMobile)}>
                   <p style={{
                     fontWeight: 'bold',
                     fontSize: '30px'

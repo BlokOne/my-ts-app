@@ -18,10 +18,10 @@ export const wrapperStyle: CSSProperties = {
 }
 
 export const itemStyle = (isMobile: any): CSSProperties => ({
-  maxWidth: isMobile ? '206px' : "266px",
+  maxWidth: isMobile ? '175px' : "266px",
   maxHeight: '357px',
   color: '#fff',
-  padding: isMobile ? '87px 25px 48px' : '87px 38px 48px',
+  padding: isMobile ? '84px 20px 48px' : '87px 38px 48px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

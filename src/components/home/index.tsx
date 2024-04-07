@@ -35,7 +35,7 @@ function Title() {
           :
           <div style={wrapperModile(mobile)}>
             <img style={{ width: '324px' }} src={bigLogo} />
-            <Button width="396px" arrow={true}>
+            <Button width="340px" arrow={true}>
               Start T-App in the Telegram
             </Button>
           </div>

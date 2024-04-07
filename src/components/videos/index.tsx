@@ -22,7 +22,7 @@ function Video() {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: '-34px', zIndex: 100 }}>
-              <Button width="374px">
+              <Button width="352px">
                 Скачать PDF Презентацию
               </Button>
             </div>

@@ -4,7 +4,7 @@ import { CSSProperties } from "react";
 export const titleStyle = (isMobile: any): CSSProperties => ({
   fontFamily: 'Inter',
   fontWeight: 700,
-  fontSize: isMobile ? "75px" : '120px',
+  fontSize: isMobile ? "60px" : '120px',
   textAlign: 'center',
   maxHeight: "182px",
   color: 'white',

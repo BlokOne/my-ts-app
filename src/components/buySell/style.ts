@@ -18,7 +18,7 @@ export const wrapperInfo = (): CSSProperties => ({
 
 export const titleStyle = (isMobile: any): CSSProperties => ({
   fontWeight: 'bold',
-  fontSize: isMobile ? '60px' : '60px',
+  fontSize: isMobile ? '47px' : '60px',
   height: '73px',
   marginBottom: "15px",
   marginLeft: isMobile ? '0px' : '0'
@@ -47,9 +47,9 @@ export const wrapperIconsStyle = (): CSSProperties => ({
 
 })
 
-export const wrapperButtonStyle = (): CSSProperties => ({
+export const wrapperButtonStyle = (isMobile: any): CSSProperties => ({
   paddingTop: "49px",
-  width: '423px',
+  width: isMobile ? "352px" : '423px',
   paddingBottom: '49px',
   borderRadius: "25px",
   display: 'flex',
@@ -65,11 +65,11 @@ export const wrapperModile2 = (value: any): CSSProperties => ({
   flexDirection: 'column',
   justifyContent: 'flex-end',
   alignItems: 'flex-start',
-  width: '432px',
-  height: 'calc(1752px)',
+  width: '352px',
+  height: 'calc(1539px)',
   margin: '0 auto',
   marginBottom: '80px',
-  marginTop: '-597px',
+  marginTop: '-700px',
   color: 'white',
   backgroundImage: `url(${value})`,
   backgroundSize: '97% 100%',

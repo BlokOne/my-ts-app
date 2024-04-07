@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-
 html,
 body {
    height: 100%;
@@ -107,7 +106,6 @@ body {
 /* Color/shape of close button cross */
 .bm-cross {
    background: #bdc3c7;
-  
 }
 
 /* General sidebar styles */
@@ -149,4 +147,6 @@ body {
 
 .buttonsWrapper {
    background-image: url("../public/7/Rectangle314.svg");
+   background-size: contain;
+   background-repeat: no-repeat;
 }
