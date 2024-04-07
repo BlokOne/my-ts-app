@@ -52,14 +52,13 @@ function RoadmapGraph() {
 
     useEffect(() => {
         getRoadmapActiveStage()
-            .then(res => res.json())
             .then((data: TActiveStage) => {
                 if (data.stage <= roadmapData.length) {
                     setActiveStage(data.stage)
                 } else {
                     setActiveStage(roadmapData.length)
                 }
-            });
+            })
     }, [])
 
     return (
