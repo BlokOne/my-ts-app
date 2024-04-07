@@ -28,7 +28,11 @@ function Footer() {
             </p>
             <Button onClick={() => {
               if (item.href.length > 0) {
-                window.location.href = item.href;
+                if (item.title === 'Mail') {
+                  window.location.href = item.href;
+                } else {
+                  window.open(item.href, '_blank')!.focus();
+                }
               }
             }} footer width={isMobile ? '147px' : '190px'} disabled={true}>
               {item.button}

@@ -47,7 +47,7 @@ function Stage({ data, activeIndex }: { data: TStage, activeIndex: number }) {
 }
 
 function RoadmapGraph() {
-    const [activeStage, setActiveStage] = useState<number>(1)
+    const [activeStage, setActiveStage] = useState<number>(2)
     const isMobile = useMediaQuery();
 
     useEffect(() => {
@@ -63,8 +63,8 @@ function RoadmapGraph() {
     }, [])
 
     return (
-        <div  style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
-            <style type="text/css">{scrollbarStyle}</style>
+        <div style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
+            {/* <style type="text/css">{scrollbarStyle}</style> */}
             <div className='scroll-container' style={roadmapStyle.container}>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>

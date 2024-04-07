@@ -338,7 +338,16 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
 export default ModalContent;
 
 function getProfit(select: string, amount: string, days: string) {
-  const profit = Number(amount) * Math.pow((1 + Number(select) / 100), Number(days));
-  return typeof profit === 'number' ? profit.toFixed() : ""
+  // eslint-disable-next-line prefer-const
+  let dailyRate = Number(select) / 100;
+  // eslint-disable-next-line prefer-const
+  let currentAmount = Number(amount);
+  // eslint-disable-next-line prefer-const
+  let totalDays = Number(days);
 
+  for (let day = 0; day < totalDays; day++) {
+    currentAmount += currentAmount * dailyRate;
+  }
+
+  return currentAmount.toFixed(2);
 }

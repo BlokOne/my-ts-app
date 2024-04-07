@@ -67,7 +67,7 @@ function TBlock() {
       href2: 'T-Autotrade',
       text: 'T-Staking is flagship product, which is a perpetual $TTTU staking that allows you to participate in the distribution of commissions that all T-Project products generate.',
       callback: () => {
-        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        const botUrl = "https://t.me/t_projects_bot";
         window.open(botUrl, '_blank')!.focus();
       },
     },
@@ -82,7 +82,7 @@ function TBlock() {
       href2: 'T-Wallet',
       text: 'T-Autotrade is lucrative custom product built on a proven investment-game PvP model based on high-frequency trading of liquidity cells. The product allows you to earn returns of 1% to 1.6% or more when you activate bonuses in $TTTU tokens on a daily basis.',
       callback: !isMobile ? openModal : () => {
-        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        const botUrl = "https://t.me/t_projects_bot";
         window.open(botUrl, '_blank')!.focus();
       },
     },
@@ -97,7 +97,7 @@ function TBlock() {
       href2: 'T-Gamble',
       text: 'T-Wallet is a single internal user wallet that is automatically created when a user registers in the T-Project system. The wallet allows you to deposit, withdraw, buy, sell and borrow assets that can be used in any T-Project product.',
       callback: () => {
-        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        const botUrl = "https://t.me/t_projects_bot";
         window.open(botUrl, '_blank')!.focus();
       },
     },
@@ -112,7 +112,7 @@ function TBlock() {
       href2: 'Our Next Products',
       text: "Very soon users will be able to enjoy betting on sports and cyber sports events, make predictions on cryptocurrency rates, while betting $TTTU and earning additional Bonuses for T-Autotrade tariffs.",
       callback: () => {
-        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        const botUrl = "https://t.me/t_projects_bot";
         window.open(botUrl, '_blank')!.focus();
       },
     },
