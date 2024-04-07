@@ -26,7 +26,11 @@ function Footer() {
             <p style={itemTextStyle}>
               {item.title}
             </p>
-            <Button footer width={isMobile ? '147px' : '190px'} disabled={true}>
+            <Button onClick={() => {
+              if (item.href.length > 0) {
+                window.location.href = item.href;
+              }
+            }} footer width={isMobile ? '147px' : '190px'} disabled={true}>
               {item.button}
             </Button>
           </div>)
@@ -43,41 +47,49 @@ const items = [
   {
     title: "Telegram",
     button: 'Join',
-    icon: telegramIcon
+    icon: telegramIcon,
+    href: "tg://resolve?domain=t_project"
   },
   {
     title: "Telegram Bot",
     button: 'Join',
-    icon: telegramBot
+    icon: telegramBot,
+    href: "tg://resolve?domain=t_projects_bot"
   },
   {
     title: "Twitter",
     button: 'Follow',
-    icon: twitter
+    icon: twitter,
+    href: 'https://twitter.com/t_project_tttu'
   },
   {
     title: "Medium",
     button: 'Subscribe',
-    icon: medium
+    icon: medium,
+    href: ''
   },
   {
     title: "Youtube",
     button: 'Subscribe',
-    icon: youtube
+    icon: youtube,
+    href: ''
   },
   {
     title: "Support",
     button: 'Contact',
-    icon: support
+    icon: support,
+    href: ''
   },
   {
     title: "Docs",
     button: 'Read more',
-    icon: docs
+    icon: docs,
+    href: ''
   }
   , {
     title: "Mail",
     button: 'Write to us',
-    icon: mail
+    icon: mail,
+    href: 'mailto:theterminal02@gmail.com'
   }
 ]

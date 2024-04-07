@@ -48,6 +48,13 @@ function TBlock() {
     setIsOpen(false);
   }
 
+  function scrollToElement(href2: string) {
+    const element = document.getElementById(href2);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   const TBlocks = [
     {
       mobile: mobile1,
@@ -57,9 +64,12 @@ function TBlock() {
       button: 'Buy TTTU',
       arrow: true,
       href1: '/',
-      href2: '/',
+      href2: 'T-Autotrade',
       text: 'T-Staking is flagship product, which is a perpetual $TTTU staking that allows you to participate in the distribution of commissions that all T-Project products generate.',
-      callback: () => console.log(1),
+      callback: () => {
+        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        window.open(botUrl, '_blank')!.focus();
+      },
     },
     {
       mobile: mobile2,
@@ -69,9 +79,12 @@ function TBlock() {
       button: !isMobile ? 'Profitability calculator' : 'Buy TTTU',
       arrow: !isMobile ? false : true,
       href1: '/',
-      href2: '/',
+      href2: 'T-Wallet',
       text: 'T-Autotrade is lucrative custom product built on a proven investment-game PvP model based on high-frequency trading of liquidity cells. The product allows you to earn returns of 1% to 1.6% or more when you activate bonuses in $TTTU tokens on a daily basis.',
-      callback: !isMobile ? openModal : () => console.log(1),
+      callback: !isMobile ? openModal : () => {
+        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        window.open(botUrl, '_blank')!.focus();
+      },
     },
     {
       mobile: mobile3,
@@ -81,9 +94,12 @@ function TBlock() {
       button: 'Buy TTTU',
       arrow: true,
       href1: '/',
-      href2: '/',
+      href2: 'T-Gamble',
       text: 'T-Wallet is a single internal user wallet that is automatically created when a user registers in the T-Project system. The wallet allows you to deposit, withdraw, buy, sell and borrow assets that can be used in any T-Project product.',
-      callback: () => console.log(1),
+      callback: () => {
+        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        window.open(botUrl, '_blank')!.focus();
+      },
     },
     {
       mobile: mobile3,
@@ -93,9 +109,12 @@ function TBlock() {
       button: 'Buy TTTU',
       arrow: true,
       href1: '/',
-      href2: '/',
-      text: " Very soon users will be able to enjoy betting on sports and cyber sports events, make predictions on cryptocurrency rates, while betting $TTTU and earning additional Bonuses for T-Autotrade tariffs.",
-      callback: () => console.log(1),
+      href2: 'Our Next Products',
+      text: "Very soon users will be able to enjoy betting on sports and cyber sports events, make predictions on cryptocurrency rates, while betting $TTTU and earning additional Bonuses for T-Autotrade tariffs.",
+      callback: () => {
+        const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+        window.open(botUrl, '_blank')!.focus();
+      },
     },
     {
       mobile: mobile6,
@@ -104,18 +123,20 @@ function TBlock() {
       button: 'RoadMap',
       arrow: true,
       href1: '/',
-      href2: '/',
+      href2: 'RoadMap',
       text: "The T-Project team is constantly working on expanding the product line. In addition to T-Gamble, T-Poker and T-Lottery will soon be released, as well as several well-known and well-loved PvP games where users can earn TTTUs and Bonuses.",
-      callback: () => console.log(1),
+      callback: () => scrollToElement('RoadMap'),
     },
   ];
+
+
 
   return (
     <>
       {TBlocks.map((item, i) => (
         <Item
           key={i}
-          id={i === 0 ? 'products' : ''}
+          id={i === 0 ? 'products' : item.title}
           mobile={item.mobile}
           mobile2={item.mobile2}
           logo={item.logo}

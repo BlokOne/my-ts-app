@@ -66,7 +66,7 @@ function RoadmapGraph() {
     }, [])
 
     return (
-        <div style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
+        <div  style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
             <div style={roadmapStyle.container}>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>

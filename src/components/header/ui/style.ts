@@ -10,7 +10,8 @@ export const linkStyle = {
   fontFamily: 'Inter',
   lineHeight: "19.36px",
   color: 'fff',
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'pointer'
 }
 
 export const linkStyleMobile = {

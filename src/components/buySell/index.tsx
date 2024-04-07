@@ -35,7 +35,10 @@ export default function BuySell() {
                 fontWeight: 'bold',
                 fontSize: '30px'
               }}>Start Trade TTTU</p>
-              <Button width='254px' arrow>
+              <Button onClick={() => {
+                const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+                window.open(botUrl, '_blank')!.focus();
+              }} width='254px' arrow>
                 TTTU/USDT
               </Button>
             </div>
@@ -62,7 +65,10 @@ export default function BuySell() {
                     fontWeight: 'bold',
                     fontSize: '30px'
                   }}>Start Trade TTTU</p>
-                  <Button width='254px' arrow>
+                  <Button onClick={() => {
+                    const botUrl = "https://www.mexc.com/ru-RU/register?inviteCode=mexc-tproject";
+                    window.open(botUrl, '_blank')!.focus();
+                  }} width='254px' arrow>
                     TTTU/USDT
                   </Button>
                 </div>

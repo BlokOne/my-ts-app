@@ -17,7 +17,6 @@ import { MediaQueryProvider } from "./media";
 function App() {
   return (
     <MediaQueryProvider>
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <Layout>
         <Title />
         <TBlock />

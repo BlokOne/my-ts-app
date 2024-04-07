@@ -25,7 +25,10 @@ export default function Header() {
             <img src={logo} />
 
             <Navigation />
-            <Button width="175px">
+            <Button onClick={() => {
+              const botUrl = "tg://resolve?domain=t_projects_bot";
+              window.location.href = botUrl;
+            }} width="175px">
               Join
             </Button>
 

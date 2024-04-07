@@ -16,9 +16,17 @@ type ItemT = {
   onClick?: () => void
 }
 
-function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }: ItemT) {
-  console.log(button)
+function Item({ mobile, href2, logo, title, button, arrow, text, id, mobile2, onClick }: ItemT) {
   const isMobile = useMediaQuery()
+
+  function scrollToElement() {
+    const element = document.getElementById(href2);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
   return (
     <>
       {
@@ -41,7 +49,7 @@ function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }
               <Button width="306px" arrow={arrow}>
                 {button}
               </Button>
-              {logo && <Button disabled={true} width="306px" >
+              {logo && <Button onClick={scrollToElement} disabled={true} width="306px" >
                 Learn more
               </Button>}
             </div>
@@ -67,7 +75,7 @@ function Item({ mobile, logo, title, button, arrow, text, id, mobile2, onClick }
                 <Button onClick={onClick} width="306px" arrow={arrow}>
                   {button}
                 </Button>
-                {logo && <Button disabled={true} width="306px" >
+                {logo && <Button onClick={scrollToElement} disabled={true} width="306px" >
                   Learn more
                 </Button>}
               </div>
