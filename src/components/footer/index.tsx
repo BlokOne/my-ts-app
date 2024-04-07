@@ -66,7 +66,7 @@ const items = [
     title: "Medium",
     button: 'Subscribe',
     icon: medium,
-    href: ''
+    href: 'https://medium.com/@t-project'
   },
   {
     title: "Youtube",

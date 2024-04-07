@@ -29,10 +29,12 @@ export default function SideBar(props: any) {
           {item.text}
         </a>
       )}
-      <Button width="230px">
+      <Button onClick={() => {
+        const botUrl = "tg://resolve?domain=t_projects_bot";
+        window.location.href = botUrl;
+      }} width="230px">
         Join
       </Button>
-
     </Menu>
   );
 }

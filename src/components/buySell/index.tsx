@@ -23,10 +23,10 @@ export default function BuySell() {
               The TTTU token is traded on the MEXC exchange. You can buy and sell tokens, send them to T-Wallet, and trade directly with the T-Tap product. Additionally, MEXC supports USDT on the EOS network.
             </p>
             <div style={wrapperIconsStyle()}>
-              <a href="/">
+              <a target='_blank' href="https://mexc.onelink.me/KTsj/Ios">
                 <img src={icon2} style={{ width: "175px" }} alt="" />
               </a>
-              <a href="/">
+              <a target='_blank' href="https://mexc.onelink.me/KTsj/google">
                 <img src={icon1} style={{ width: "175px" }} alt="" />
               </a>
             </div>
@@ -53,10 +53,10 @@ export default function BuySell() {
                   The TTTU token is traded on the MEXC exchange. You can buy and sell tokens, send them to T-Wallet, and trade directly with the T-Tap product. Additionally, MEXC supports USDT on the EOS network.
                 </p>
                 <div style={wrapperIconsStyle()}>
-                  <a href="/">
+                  <a target='_blank' href="https://mexc.onelink.me/KTsj/Ios">
                     <img src={icon2} alt="" />
                   </a>
-                  <a href="/">
+                  <a target='_blank' href="https://mexc.onelink.me/KTsj/google">
                     <img src={icon1} alt="" />
                   </a>
                 </div>
