@@ -65,7 +65,7 @@ function RoadmapGraph() {
 
     return (
         <div  style={{ ...roadmapStyle.wrapper, ...{ paddingTop: isMobile ? '75px' : '225px', } }}>
-            <style type="text/css">{scrollbarStyle}</style>
+            {/* <style type="text/css">{scrollbarStyle}</style> */}
             <div className='scroll-container' style={roadmapStyle.container}>
                 {/* track */}
                 <div style={trackStyle.trackContainer}>
