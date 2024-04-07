@@ -104,6 +104,8 @@ const selectStyles = {
 
   container: (baseStyle: any) => ({
     ...baseStyle,
+    scrollbarColor: '#0df69e transparent',
+    scrollbarWidth: 'thin',
   }),
   control: (baseStyle: any, state: any) => ({
     ...baseStyle,
