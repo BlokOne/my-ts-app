@@ -341,7 +341,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
 export default ModalContent;
 
 function getProfit(select: string, amount: string, days: string) {
-  const profit = Number(select) / 100 * Number(amount) * Number(days)
+  const profit = Number(amount) * Math.pow((1 + Number(select) / 100), Number(days));
   return typeof profit === 'number' ? profit.toFixed() : ""
 
 }
