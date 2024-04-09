@@ -9,11 +9,12 @@ type ButtonT = {
   disabled?: boolean
   footer?: boolean
   onClick?: () => void
+  nextButtonRef?: any
 }
 
-function Button({ width, children, arrow, disabled, footer,onClick }: ButtonT) {
+function Button({ width, children, arrow, disabled, footer, onClick, nextButtonRef }: ButtonT) {
   return (
-    <button onClick={onClick} style={buttonStyle(width, arrow, disabled, footer)}>
+    <button ref={nextButtonRef} onClick={onClick} style={buttonStyle(width, arrow, disabled, footer)}>
       {children}
       {
         arrow && <img src={arrowSvg} />

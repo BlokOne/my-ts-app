@@ -13,8 +13,14 @@ import logo5 from '../../../public/5/logo.svg';
 import { useMediaQuery } from '../../media/useMedia';
 import Item from './item';
 import ModalContent from './modalContent';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Modal from 'react-modal';
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation, EffectFade } from "swiper/modules"
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const customStyles = {
   content: {
@@ -36,6 +42,7 @@ const customStyles = {
 
 function TBlock() {
 
+  const nextButtonRef = useRef(null);
   const isMobile = useMediaQuery();
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -129,26 +136,39 @@ function TBlock() {
     },
   ];
 
-
-
   return (
     <>
-      {TBlocks.map((item, i) => (
-        <Item
-          key={i}
-          id={i === 0 ? 'products' : item.title}
-          mobile={item.mobile}
-          mobile2={item.mobile2}
-          logo={item.logo}
-          title={item.title}
-          onClick={item.callback}
-          button={item.button}
-          arrow={item.arrow}
-          text={item.text}
-          href1={item.href1}
-          href2={item.href2}
-        />
-      ))}
+      <Swiper
+        direction={"vertical"}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: nextButtonRef.current,
+        }}
+        effect={"fade"}
+        className="mySwiper"
+        modules={[Pagination, Navigation, EffectFade]}
+      >
+        {TBlocks.map((item, i) => (
+          <SwiperSlide className="slide slide1"><Item
+            key={i}
+            id={i === 0 ? 'products' : item.title}
+            mobile={item.mobile}
+            mobile2={item.mobile2}
+            logo={item.logo}
+            title={item.title}
+            onClick={item.callback}
+            button={item.button}
+            arrow={item.arrow}
+            text={item.text}
+            nextButtonRef={nextButtonRef}
+            href1={item.href1}
+            href2={item.href2}
+          /></SwiperSlide>
+        ))}
+      </Swiper>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
