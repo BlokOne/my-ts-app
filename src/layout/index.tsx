@@ -12,7 +12,7 @@ function Layout({ children }: { children: ReactNode }) {
       <main style={mainStyle(isMobile)}>
         {children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
