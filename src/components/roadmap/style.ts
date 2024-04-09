@@ -4,8 +4,17 @@ import { CONTAINER_WIDTH } from '../../shared/style';
 const STAGES_OFFSET: string = '82.5'; // move stages container up over the track
 
 export const MARK_COLORS: { [key: string]: string } = {
-    BACKGROUND_GREY: '#313032',
+    BACKGROUND_GREY: '#272628',
+    INNER_SHADOW_GREY: '#282729',
+    OUTER_SHADOW_GREY: '#272628',
+
+    FINISHED_TEAL: '#0df69e',
+    INNER_SHADOW_FINISHED: '#0df69e',
+    OUTER_SHADOW_FINISHED: '#0df69e',
+
     ACTIVE_TEAL: '#0df69e',
+    INNER_SHADOW_ACTIVE: '#313032',
+    OUTER_SHADOW_ACTIVE: '#313032',
 };
 
 export  const scrollbarStyle: string = `.scroll-container::-webkit-scrollbar {width: 4px;} .scroll-container::-webkit-scrollbar-track {background: transparent;} .scroll-container::-webkit-scrollbar-thumb {background-color: ${MARK_COLORS.ACTIVE_TEAL}; border-radius: 2px; border: transparent;}`;
@@ -140,7 +149,7 @@ export const stagesStyle: { [key: string]: CSSProperties } = {
         height: '45px',
         backgroundColor: 'var(--mark-color)',
         borderRadius: '50%',
-        boxShadow: '0 0 20px 0 var(--mark-color)',
+        boxShadow: '0 0 20px 0 var(--outer-shadow-color)',
         opacity: '0.5',
         transform: 'translate(-50%, -50%)'
     },
@@ -153,7 +162,7 @@ export const stagesStyle: { [key: string]: CSSProperties } = {
         backgroundColor: 'var(--mark-color)',
         borderRadius: '50%',
         opacity: '1',
-        boxShadow: '0 0 20px 0 var(--mark-color)',
+        boxShadow: '0 0 20px 0 var(--inner-shadow-color)',
         transform: 'translate(-50%, -50%)'
     },
     stageTitle: {

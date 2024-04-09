@@ -17,7 +17,27 @@ type TActiveStage = {
 }
 
 function setMarkColor(activeIndex: number, id: string) {
-    return Number(id) < activeIndex ? { "--mark-color": MARK_COLORS.ACTIVE_TEAL } as CSSProperties : { "--mark-color": MARK_COLORS.BACKGROUND_GREY } as CSSProperties;
+    if (Number(id) < activeIndex - 1) {
+        return {
+        "--mark-color": MARK_COLORS.FINISHED_TEAL,
+        "--outer-shadow-color": MARK_COLORS.OUTER_SHADOW_FINISHED,
+        "--inner-shadow-color": MARK_COLORS.INNER_SHADOW_FINISHED
+        } as CSSProperties;
+    }
+
+    if (Number(id) === activeIndex - 1) {
+        return {
+        "--mark-color": MARK_COLORS.ACTIVE_TEAL,
+        "--outer-shadow-color": MARK_COLORS.OUTER_SHADOW_ACTIVE,
+        "--inner-shadow-color": MARK_COLORS.INNER_SHADOW_ACTIVE
+        } as CSSProperties;
+    }
+
+    return {
+        "--mark-color": MARK_COLORS.BACKGROUND_GREY,
+        "--outer-shadow-color": MARK_COLORS.OUTER_SHADOW_GREY,
+        "--inner-shadow-color": MARK_COLORS.INNER_SHADOW_GREY
+    } as CSSProperties;
 }
 
 function setPathWidth(activeIndex: number, isMobile: any) {
