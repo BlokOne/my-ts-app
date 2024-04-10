@@ -22,8 +22,11 @@ function Video() {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: '-34px', zIndex: 100 }}>
-              <Button width="352px">
-                Скачать PDF Презентацию
+              <Button onClick={() => {
+                const botUrl = "https://shiner-powerful-coyote.ngrok-free.app/api/v2/file/";
+                window.open(botUrl, '_blank')!.focus();
+              }} width="352px">
+                Download PDF Presentation
               </Button>
             </div>
           </div > :
@@ -40,8 +43,11 @@ function Video() {
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', marginTop: '-34px', zIndex: 100 }}>
-              <Button width="374px">
-                Скачать PDF Презентацию
+              <Button onClick={() => {
+                const botUrl = "https://shiner-powerful-coyote.ngrok-free.app/api/v2/file/";
+                window.open(botUrl, '_blank')!.focus();
+              }} width="374px">
+                Download PDF Presentation
               </Button>
             </div>
           </div>
