@@ -21,13 +21,13 @@ type SliderSettings = {
 
 // ==== data for select list ====
 const options: Option[] = [
-  { value: '1', label: '1% в день' },
-  { value: '1.1', label: '1.1% в день' },
-  { value: '1.2', label: '1.2% в день' },
-  { value: '1.3', label: '1.3% в день' },
-  { value: '1.5', label: '1.5% в день' },
-  { value: '1.6', label: '1.6% в день' },
-  { value: '1.7', label: '1.7% в день' }
+  { value: '1', label: '1% per day' },
+  { value: '1.1', label: '1.1% per day' },
+  { value: '1.2', label: '1.2% per day' },
+  { value: '1.3', label: '1.3% per day' },
+  { value: '1.5', label: '1.5% per day' },
+  { value: '1.6', label: '1.6% per day' },
+  { value: '1.7', label: '1.7% per day' }
 ];
 
 // ==== styles ====
@@ -256,7 +256,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
           aria-hidden='true'
         />
       </button>
-      <p style={labelStyle}>Выберите план</p>
+      <p style={labelStyle}>Select a plan</p>
       <Select
         styles={selectStyles}
         isSearchable={false}
@@ -264,7 +264,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
         options={options}
         onChange={handleSelect}
       />
-      <p style={labelStyle}>Введите сумму инвестиции</p>
+      <p style={labelStyle}>Enter the investment amount</p>
       <div
         style={{ position: 'relative' }}
       >
@@ -299,7 +299,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
           TTTU
         </span>
       </div>
-      <p style={labelStyle}>Количество дней</p>
+      <p style={labelStyle}>Number of days</p>
       <style scoped type='text/css'>
         {sliderStyle.markStyleAdd}
       </style>
@@ -327,7 +327,7 @@ function ModalContent({ onButtonClick }: { onButtonClick: () => void }) {
           alignItems: 'baseline',
         }}
       >
-        <p style={{ ...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Ваш профит составит:</p>
+        <p style={{ ...labelStyle, marginRight: '30px', marginBottom: 0, flexShrink: 0 }}>Your profit will be:</p>
         <p style={{ fontSize: '48px' }}>
           <span style={{ wordBreak: 'break-all', userSelect: 'none' }}>{profit}</span>
           <span style={{ marginLeft: '15px', fontSize: '24px', userSelect: 'none' }}>TTTU</span>
